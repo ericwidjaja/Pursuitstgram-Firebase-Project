@@ -44,7 +44,7 @@ class LogInView: UIView {
         return textField
     }()
     
-    lazy var enterButton: UIButton = {
+    lazy var signInButton: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = #colorLiteral(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 1)
         button.layer.cornerRadius = 8
@@ -67,7 +67,7 @@ class LogInView: UIView {
         return button
     }()
     
-    lazy var objectsViewArray = [self.projectTitle, self.emailTxtField, self.passwordTxtField, self.enterButton, self.createNewAcctButton]
+    lazy var objectsViewArray = [self.projectTitle, self.emailTxtField, self.passwordTxtField, self.signInButton, self.createNewAcctButton]
     
     
     //MARK:Add ViewsToSubviews
@@ -115,10 +115,10 @@ class LogInView: UIView {
     
     private func enterButtonConstraints() {
         NSLayoutConstraint.activate([
-        enterButton.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
-        enterButton.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor, constant: 175),
-        enterButton.heightAnchor.constraint(equalToConstant: 80),
-        enterButton.widthAnchor.constraint(equalToConstant: 80)])
+        signInButton.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
+        signInButton.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor, constant: 175),
+        signInButton.heightAnchor.constraint(equalToConstant: 80),
+        signInButton.widthAnchor.constraint(equalToConstant: 80)])
     }
     
     private func createAcctButtonConstraints() {
