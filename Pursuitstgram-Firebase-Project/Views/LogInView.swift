@@ -29,7 +29,7 @@ class LogInView: UIView {
         textField.placeholder = "email?"
         textField.font = UIFont(name: "Noteworthy", size: 16)
         textField.backgroundColor = .white
-        textField.borderStyle = .roundedRect
+        textField.borderStyle = .bezel
         textField.autocorrectionType = .no
         return textField
     }()
@@ -38,13 +38,37 @@ class LogInView: UIView {
         textField.placeholder = "password?"
         textField.font = UIFont(name: "Noteworthy", size: 16)
         textField.backgroundColor = .white
-        textField.borderStyle = .roundedRect
+        textField.borderStyle = .bezel
         textField.autocorrectionType = .no
         textField.isSecureTextEntry = true
         return textField
     }()
     
-    lazy var objectsViewArray = [self.projectTitle, self.emailTxtField, self.passwordTxtField]
+    lazy var enterButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.backgroundColor = #colorLiteral(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 1)
+        button.layer.cornerRadius = 8
+        button.setTitle("SIGN IN", for: .normal)
+        button.setTitleColor(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1), for: .normal)
+        button.titleLabel?.font = UIFont(name: "Noteworthy-Bold", size: 16)
+        return button
+    }()
+    
+    var createNewAcctButton: UIButton = {
+        let button = UIButton(type: .system)
+        let attributedTitle = NSMutableAttributedString(string: "Create a New Account?    ",attributes: [
+            NSAttributedString.Key.font: UIFont(name: "Noteworthy", size: 18)!,
+            NSAttributedString.Key.foregroundColor: UIColor.white])
+        attributedTitle.append(NSAttributedString(string: "Sign Up",
+                                                  attributes: [NSAttributedString.Key.font: UIFont(name: "Noteworthy-Bold", size: 18)!,
+                                                               
+                                NSAttributedString.Key.foregroundColor:  UIColor(red: 17/255, green: 154/255, blue: 237/255, alpha: 1)]))
+        button.setAttributedTitle(attributedTitle, for: .normal)
+        return button
+    }()
+    
+    lazy var objectsViewArray = [self.projectTitle, self.emailTxtField, self.passwordTxtField, self.enterButton, self.createNewAcctButton]
+    
     
     //MARK:Add ViewsToSubviews
     func addViewsToSubView() {
@@ -58,34 +82,50 @@ class LogInView: UIView {
     func setConstraints() {
         addViewsToSubView()
         titleConstraints()
-//        emailTextFieldConstraints()
-//        passwordTextFieldConstraints()
+        emailTextFieldConstraints()
+        passwordTextFieldConstraints()
+        enterButtonConstraints()
+        createAcctButtonConstraints()
     }
     
     private func titleConstraints() {
-        addSubview(projectTitle)
         NSLayoutConstraint.activate([
         projectTitle.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
         projectTitle.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,constant: 60),
-        projectTitle.heightAnchor.constraint(equalToConstant: 70), projectTitle.widthAnchor.constraint(equalToConstant: 350)])
+        projectTitle.heightAnchor.constraint(equalToConstant: 100), projectTitle.widthAnchor.constraint(equalToConstant: 400)])
     }
     
-//    private func emailTextFieldConstraints() {
-//        emailTxtField.translatesAutoresizingMaskIntoConstraints = false
-//        NSLayoutConstraint.activate([
-//            emailTxtField.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor,constant: 120),
-//            emailTxtField.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
-//            emailTxtField.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor,constant: 20),
-//            emailTxtField.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor,constant: -20)])
-//    }
-//    private func passwordTextFieldConstraints() {
-//        passwordTxtField.translatesAutoresizingMaskIntoConstraints = false
-//        NSLayoutConstraint.activate([
-//            passwordTxtField.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
-//            passwordTxtField.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor,constant: 150),
-//            passwordTxtField.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor,constant: 20),
-//            passwordTxtField.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor,constant: -20)])
-//    }
+    private func emailTextFieldConstraints() {
+        NSLayoutConstraint.activate([
+        emailTxtField.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor,constant: 35),
+        emailTxtField.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
+        emailTxtField.heightAnchor.constraint(equalToConstant: 45),
+        emailTxtField.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor,constant: 20),
+        emailTxtField.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor,constant: -20)])
+    }
+    
+    private func passwordTextFieldConstraints() {
+        NSLayoutConstraint.activate([
+        passwordTxtField.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
+        passwordTxtField.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor,constant: 100),
+        passwordTxtField.heightAnchor.constraint(equalToConstant: 45),
+        passwordTxtField.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor,constant: 20),
+        passwordTxtField.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor,constant: -20)])
+    }
+    
+    private func enterButtonConstraints() {
+        NSLayoutConstraint.activate([
+        enterButton.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
+        enterButton.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor, constant: 175),
+        enterButton.heightAnchor.constraint(equalToConstant: 80),
+        enterButton.widthAnchor.constraint(equalToConstant: 80)])
+    }
+    
+    private func createAcctButtonConstraints() {
+        NSLayoutConstraint.activate([
+            createNewAcctButton.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
+            createNewAcctButton.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -50)])
+    }
     
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
