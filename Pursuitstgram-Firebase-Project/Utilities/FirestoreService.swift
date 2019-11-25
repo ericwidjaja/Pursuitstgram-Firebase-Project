@@ -123,36 +123,36 @@ class FirestoreService {
 //            
 //    }
 //    
-    func getPosts(forUserID: String, completion: @escaping (Result<[Post], Error>) -> ()) {
-        db.collection(FireStoreCollections.posts.rawValue).whereField("creatorID", isEqualTo: forUserID).getDocuments { (snapshot, error) in
-            if let error = error {
-                completion(.failure(error))
-            } else {
-                let posts = snapshot?.documents.compactMap({ (snapshot) -> Post? in
-                    let postID = snapshot.documentID
-                    let post = Post(from: snapshot.data(), id: postID)
-                    return post
-                })
-                completion(.success(posts ?? []))
-            }
-        }
-    }
-    func getUserNameFromPost(creatorID: String, completion: @escaping (Result<String,Error>) -> ()) {
-        db.collection(FireStoreCollections.users.rawValue).document(creatorID).getDocument { (snapshot, error) in
-            
-            if let error = error {
-                completion(.failure(error))
-            } else if let snapshot = snapshot,
-                let data = snapshot.data() {
-                let userID = snapshot.documentID
-                let user = AppUser(from: data, id: userID)
-                if let appUser = user {
-                    completion(.success(appUser.userName ?? ""))
-                }
-            }
-        }
-    }
-    private init () {}
+//    func getPosts(forUserID: String, completion: @escaping (Result<[Post], Error>) -> ()) {
+//        db.collection(FireStoreCollections.posts.rawValue).whereField("creatorID", isEqualTo: forUserID).getDocuments { (snapshot, error) in
+//            if let error = error {
+//                completion(.failure(error))
+//            } else {
+//                let posts = snapshot?.documents.compactMap({ (snapshot) -> Post? in
+//                    let postID = snapshot.documentID
+//                    let post = Post(from: snapshot.data(), id: postID)
+//                    return post
+//                })
+//                completion(.success(posts ?? []))
+//            }
+//        }
+//    }
+//    func getUserNameFromPost(creatorID: String, completion: @escaping (Result<String,Error>) -> ()) {
+//        db.collection(FireStoreCollections.users.rawValue).document(creatorID).getDocument { (snapshot, error) in
+//            
+//            if let error = error {
+//                completion(.failure(error))
+//            } else if let snapshot = snapshot,
+//                let data = snapshot.data() {
+//                let userID = snapshot.documentID
+//                let user = AppUser(from: data, id: userID)
+//                if let appUser = user {
+//                    completion(.success(appUser.userName ?? ""))
+//                }
+//            }
+//        }
+//    }
+//    private init () {}
 }
 
 

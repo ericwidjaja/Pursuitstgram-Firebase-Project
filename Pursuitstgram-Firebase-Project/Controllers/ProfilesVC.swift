@@ -62,20 +62,20 @@ class ProfilesVC: UIViewController {
         }
     }
 
-    private func getPostCount() {
-        if let userUID = FirebaseAuthService.manager.currentUser?.uid {
-            DispatchQueue.global(qos: .default).async {
-                FirestoreService.manager.getPosts(forUserID: userUID) { (result) in
-                    switch result {
-                    case .failure(let error):
-                        print(error)
-                    case .success(let posts):
-                        self.postCount = posts.count
-                    }
-                }
-            }
-        }
-    }
+//    private func getPostCount() {
+//        if let userUID = FirebaseAuthService.manager.currentUser?.uid {
+//            DispatchQueue.global(qos: .default).async {
+//                FirestoreService.manager.getPosts(forUserID: userUID) { (result) in
+//                    switch result {
+//                    case .failure(let error):
+//                        print(error)
+//                    case .success(let posts):
+//                        self.postCount = posts.count
+//                    }
+//                }
+//            }
+//        }
+//    }
 
     private func updateUserNameField(newDisplayName: String) {
         guard let userUID = FirebaseAuthService.manager.currentUser?.uid else {
@@ -94,7 +94,7 @@ class ProfilesVC: UIViewController {
     //MARK: - Objc Functions
     @objc func displayForm(){
         //create alert
-        let alert = UIAlertController(title: "Edit Display Name?", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Edit Profile Name?", message: nil, preferredStyle: .alert)
 
         //create cancel button
         let cancelAction = UIAlertAction(title: "Cancel" , style: .cancel)
@@ -111,7 +111,7 @@ class ProfilesVC: UIViewController {
                 switch result {
                 case .success:
                     self.showAlert(with: "Display Name Changed!", and: "successful!")
-                    profilesView.nameLabel.text = newName
+                    self.profilesView.nameLabel.text = newName
                     self.updateUserNameField(newDisplayName: newName)
                 case .failure(let error):
                     print(error)
@@ -141,7 +141,7 @@ class ProfilesVC: UIViewController {
     
     private func setProfilesView() {
         view.addSubview(profilesView)
-        self.view.backgroundColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
+        self.view.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
     }
     
     //MARK: - Lifecycle
@@ -149,13 +149,14 @@ class ProfilesVC: UIViewController {
         super.viewDidLoad()
         setProfilesView()
         profilesView.editButton.addTarget(self, action: #selector(displayForm), for: .touchUpInside)
+        profilesView.addButton.addTarget(self, action: #selector(presentPhotoPickerController), for: .touchUpInside)
     }
 
    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setDefaultName()
         setDefaultImage()
-        getPostCount()
+//        getPostCount()
     }
 }
 

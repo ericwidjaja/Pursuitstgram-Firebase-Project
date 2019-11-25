@@ -11,39 +11,43 @@ class ProfileView: UIView {
 //MARK: -Objects
     var profileLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 40)
-        label.text = "Profile"
+        label.font = UIFont.init(name: "Noteworthy-Bold", size: 40)
+        label.text = "User Profile"
         label.textAlignment = .center
         label.textColor = .white
         return label
     }()
     var nameLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 40)
-        label.text = "Display Name"
+        label.font = UIFont.init(name: "Noteworthy-Bold", size: 40)
+        label.text = "Profile Name"
         label.textAlignment = .center
-        label.textColor = .black
+        label.textColor = .white
         return label
     }()
     
     var emailLabel: UILabel = {
         let label = UILabel()
-        label.text = "example@email.com"
-        label.font = UIFont.systemFont(ofSize: 22)
+        label.text = "youremail@email.com"
+        label.font = UIFont.init(name: "Noteworthy", size: 22)
+        label.textAlignment = .center
+        label.textColor = .white
         return label
     }()
     
     var userImage: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "noImage")
+        image.image = #imageLiteral(resourceName: "InstaProfileIMG")
         image.contentMode = .scaleAspectFill
         return image
     }()
     
     var imageSubmissionLabel: UILabel = {
         let label = UILabel()
-        label.text = "You have not submitted any images"
-        label.font = UIFont.systemFont(ofSize: 20)
+        label.text = "You have NOT submitted any images"
+        label.font = UIFont.init(name: "Noteworthy", size: 22)
+        label.textAlignment = .center
+        label.textColor = .white
         label.numberOfLines = 0
         return label
     }()
@@ -51,19 +55,20 @@ class ProfileView: UIView {
     var addButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "add"), for: .normal)
-//        button.addTarget(self, action: #selector(presentPhotoPickerController), for: .touchUpInside)
+        
         return button
     }()
     
     var editButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Edit", for: .normal)
-        button.setTitleColor(.systemTeal, for: .normal)
+        button.setTitle("E d i t ?", for: .normal)
+        button.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
         return button
     }()
     
 //MARK: - Constraints
     func profileConstraints() {
+        addViewsToSubView()
         profileLabelConstraints()
         imageConstraints()
         nameConstraints()
@@ -72,8 +77,7 @@ class ProfileView: UIView {
         submissionConstraints()
         addButtonConstraints()
     }
-    
-    
+
     lazy var profileObjectsViewArray = [self.profileLabel, self.nameLabel, self.emailLabel, self.userImage, self.imageSubmissionLabel, self.addButton, self.editButton]
     
     
@@ -87,33 +91,34 @@ class ProfileView: UIView {
     private func profileLabelConstraints() {
         NSLayoutConstraint.activate([
             profileLabel.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
-            profileLabel.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,constant: 50),
-            profileLabel.heightAnchor.constraint(equalToConstant: 70),
-            profileLabel.widthAnchor.constraint(equalToConstant: 200)])
+            profileLabel.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,constant: 60),
+            profileLabel.heightAnchor.constraint(equalToConstant: 80),
+            profileLabel.widthAnchor.constraint(equalToConstant: 300)])
     }
     private func imageConstraints() {
         NSLayoutConstraint.activate([
-            userImage.centerXAnchor.constraint(equalTo: profileLabel.centerXAnchor),
+            userImage.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
             userImage.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor),
-            userImage.widthAnchor.constraint(equalToConstant: 200),
-            userImage.heightAnchor.constraint(equalToConstant: 200)])
+            userImage.widthAnchor.constraint(equalToConstant: 150),
+            userImage.heightAnchor.constraint(equalToConstant: 175)])
     }
     private func nameConstraints() {
         NSLayoutConstraint.activate([
-            nameLabel.topAnchor.constraint(equalTo: userImage.bottomAnchor,constant: 20),
-            nameLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor,constant: 20),
-            nameLabel.trailingAnchor.constraint(equalTo:safeAreaLayoutGuide.trailingAnchor,constant: -20)])
+            nameLabel.topAnchor.constraint(equalTo: userImage.bottomAnchor,constant: 45),
+            nameLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor,constant: 10),
+            nameLabel.trailingAnchor.constraint(equalTo:safeAreaLayoutGuide.trailingAnchor,constant: -10)])
     }
     private func editButtonConstraints() {
         NSLayoutConstraint.activate([
-            editButton.topAnchor.constraint(equalTo: nameLabel.bottomAnchor),
-            editButton.centerXAnchor.constraint(equalTo: nameLabel.centerXAnchor)])
+            editButton.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10),
+            editButton.centerXAnchor.constraint(equalTo: nameLabel.centerXAnchor),
+            editButton.widthAnchor.constraint(equalToConstant: 80)])
     }
     private func emailLabelConstraints() {
         NSLayoutConstraint.activate([
-            emailLabel.topAnchor.constraint(equalTo: editButton.bottomAnchor, constant: 50),
-            emailLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            emailLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20)])
+            emailLabel.topAnchor.constraint(equalTo: editButton.bottomAnchor, constant: 25),
+            emailLabel.centerXAnchor.constraint(equalTo: editButton.centerXAnchor),
+            emailLabel.widthAnchor.constraint(equalToConstant: 250)])
     }
     private func submissionConstraints() {
         NSLayoutConstraint.activate([
