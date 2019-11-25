@@ -25,6 +25,7 @@
 		DF28B3AC2389AF7C00AA8CE0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF28B3AB2389AF7C00AA8CE0 /* GoogleService-Info.plist */; };
 		DF28B3AD2389AF7C00AA8CE0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF28B3AB2389AF7C00AA8CE0 /* GoogleService-Info.plist */; };
 		DF28B3AE2389AF7C00AA8CE0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF28B3AB2389AF7C00AA8CE0 /* GoogleService-Info.plist */; };
+		DF5B7407238B64E7002D0792 /* FirebaseAuthMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B7406238B64E7002D0792 /* FirebaseAuthMgr.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		DF28B33E23837B0900AA8CE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF28B3A52389A8CC00AA8CE0 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		DF28B3AB2389AF7C00AA8CE0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DF5B7406238B64E7002D0792 /* FirebaseAuthMgr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthMgr.swift; sourceTree = "<group>"; };
 		F018F81C11946576359DF32E /* Pods-Pursuitstgram-Firebase-ProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pursuitstgram-Firebase-ProjectTests.release.xcconfig"; path = "Target Support Files/Pods-Pursuitstgram-Firebase-ProjectTests/Pods-Pursuitstgram-Firebase-ProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,8 +140,10 @@
 			children = (
 				DF28B31723837B0400AA8CE0 /* AppDelegate.swift */,
 				DF28B31923837B0400AA8CE0 /* SceneDelegate.swift */,
+				DF5B7405238B649A002D0792 /* Models */,
 				DF28B3A92389A8E000AA8CE0 /* Views */,
 				DF28B3A42389A84E00AA8CE0 /* Controllers */,
+				DF5B740A238B656F002D0792 /* Utilities */,
 				DF28B31D23837B0400AA8CE0 /* Main.storyboard */,
 				DF28B32323837B0900AA8CE0 /* Assets.xcassets */,
 				DF28B32523837B0900AA8CE0 /* LaunchScreen.storyboard */,
@@ -182,6 +186,21 @@
 				DF28B3A52389A8CC00AA8CE0 /* LogInView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		DF5B7405238B649A002D0792 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DF5B740A238B656F002D0792 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				DF5B7406238B64E7002D0792 /* FirebaseAuthMgr.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		EB3436A4F6C291C25F609F8D /* Pods */ = {
@@ -442,6 +461,7 @@
 				DF28B3A62389A8CC00AA8CE0 /* LogInView.swift in Sources */,
 				DF28B31C23837B0400AA8CE0 /* LogInVC.swift in Sources */,
 				DF28B31823837B0400AA8CE0 /* AppDelegate.swift in Sources */,
+				DF5B7407238B64E7002D0792 /* FirebaseAuthMgr.swift in Sources */,
 				DF28B31A23837B0400AA8CE0 /* SceneDelegate.swift in Sources */,
 				DF28B32223837B0400AA8CE0 /* Pursuitstgram_Firebase_Project.xcdatamodeld in Sources */,
 			);

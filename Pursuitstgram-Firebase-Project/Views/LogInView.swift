@@ -1,10 +1,8 @@
-//
-//  LogIn.swift
+// LogIn.swift
 //  Pursuitstgram-Firebase-Project
-//
 //  Created by Eric Widjaja on 11/23/19.
 //  Copyright © 2019 Eric.W. All rights reserved.
-//
+
 
 import UIKit
 import FirebaseAuth
@@ -13,10 +11,10 @@ import FirebaseAuth
 class LogInView: UIView {
 
 //MARK: - Objects
-    var projectTitle: UILabel = {
+    lazy var projectTitle: UILabel = {
         let label = UILabel()
         label.numberOfLines = 1
-        label.text = "P U R S U I T S T G R A M"
+        label.text = " P U R S U I T S T G R A M "
         label.font = UIFont(name: "Noteworthy-Bold", size: 32)
         label.textColor = UIColor.white
         label.adjustsFontSizeToFitWidth = true
@@ -24,18 +22,19 @@ class LogInView: UIView {
         label.textAlignment = .center
         return label
     }()
+    
     var emailTxtField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "email?"
+        textField.placeholder = "enter email here"
         textField.font = UIFont(name: "Noteworthy", size: 16)
         textField.backgroundColor = .white
         textField.borderStyle = .bezel
         textField.autocorrectionType = .no
         return textField
     }()
-    lazy var passwordTxtField: UITextField = {
+    var passwordTxtField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "password?"
+        textField.placeholder = "enter your password"
         textField.font = UIFont(name: "Noteworthy", size: 16)
         textField.backgroundColor = .white
         textField.borderStyle = .bezel
@@ -46,7 +45,7 @@ class LogInView: UIView {
     
     lazy var signInButton: UIButton = {
         let button = UIButton(type: .system)
-        button.backgroundColor = #colorLiteral(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 1)
+        button.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
         button.layer.cornerRadius = 8
         button.setTitle("SIGN IN", for: .normal)
         button.setTitleColor(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1), for: .normal)
