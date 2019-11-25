@@ -35,6 +35,12 @@
 		DF5B7418238B70D9002D0792 /* FirebaseTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B7417238B70D9002D0792 /* FirebaseTabBarVC.swift */; };
 		DF5B7419238B70D9002D0792 /* FirebaseTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B7417238B70D9002D0792 /* FirebaseTabBarVC.swift */; };
 		DF5B741A238B70D9002D0792 /* FirebaseTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B7417238B70D9002D0792 /* FirebaseTabBarVC.swift */; };
+		DF5B741C238C354E002D0792 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B741B238C354E002D0792 /* ProfileView.swift */; };
+		DF5B741D238C354E002D0792 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B741B238C354E002D0792 /* ProfileView.swift */; };
+		DF5B741E238C354E002D0792 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B741B238C354E002D0792 /* ProfileView.swift */; };
+		DF5B7420238C39F6002D0792 /* ProfileEditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B741F238C39F6002D0792 /* ProfileEditVC.swift */; };
+		DF5B7421238C39F6002D0792 /* ProfileEditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B741F238C39F6002D0792 /* ProfileEditVC.swift */; };
+		DF5B7422238C39F6002D0792 /* ProfileEditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B741F238C39F6002D0792 /* ProfileEditVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +90,8 @@
 		DF5B740B238B6B85002D0792 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		DF5B740F238B7000002D0792 /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		DF5B7417238B70D9002D0792 /* FirebaseTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseTabBarVC.swift; sourceTree = "<group>"; };
+		DF5B741B238C354E002D0792 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		DF5B741F238C39F6002D0792 /* ProfileEditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditVC.swift; sourceTree = "<group>"; };
 		F018F81C11946576359DF32E /* Pods-Pursuitstgram-Firebase-ProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pursuitstgram-Firebase-ProjectTests.release.xcconfig"; path = "Target Support Files/Pods-Pursuitstgram-Firebase-ProjectTests/Pods-Pursuitstgram-Firebase-ProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -189,6 +197,7 @@
 			children = (
 				DF28B31B23837B0400AA8CE0 /* LogInVC.swift */,
 				DF5B7417238B70D9002D0792 /* FirebaseTabBarVC.swift */,
+				DF5B741F238C39F6002D0792 /* ProfileEditVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -197,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				DF28B3A52389A8CC00AA8CE0 /* LogInView.swift */,
+				DF5B741B238C354E002D0792 /* ProfileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -475,10 +485,12 @@
 			files = (
 				DF5B7410238B7000002D0792 /* AppUser.swift in Sources */,
 				DF5B740C238B6B85002D0792 /* FirestoreService.swift in Sources */,
+				DF5B741C238C354E002D0792 /* ProfileView.swift in Sources */,
 				DF28B3A62389A8CC00AA8CE0 /* LogInView.swift in Sources */,
 				DF28B31C23837B0400AA8CE0 /* LogInVC.swift in Sources */,
 				DF5B7418238B70D9002D0792 /* FirebaseTabBarVC.swift in Sources */,
 				DF28B31823837B0400AA8CE0 /* AppDelegate.swift in Sources */,
+				DF5B7420238C39F6002D0792 /* ProfileEditVC.swift in Sources */,
 				DF5B7407238B64E7002D0792 /* FirebaseAuthService.swift in Sources */,
 				DF28B31A23837B0400AA8CE0 /* SceneDelegate.swift in Sources */,
 				DF28B32223837B0400AA8CE0 /* Pursuitstgram_Firebase_Project.xcdatamodeld in Sources */,
@@ -493,7 +505,9 @@
 				DF28B33223837B0900AA8CE0 /* Pursuitstgram_Firebase_ProjectTests.swift in Sources */,
 				DF5B740D238B6B85002D0792 /* FirestoreService.swift in Sources */,
 				DF28B3A72389A8CC00AA8CE0 /* LogInView.swift in Sources */,
+				DF5B741D238C354E002D0792 /* ProfileView.swift in Sources */,
 				DF5B7419238B70D9002D0792 /* FirebaseTabBarVC.swift in Sources */,
+				DF5B7421238C39F6002D0792 /* ProfileEditVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,7 +519,9 @@
 				DF28B33D23837B0900AA8CE0 /* Pursuitstgram_Firebase_ProjectUITests.swift in Sources */,
 				DF5B740E238B6B85002D0792 /* FirestoreService.swift in Sources */,
 				DF28B3A82389A8CC00AA8CE0 /* LogInView.swift in Sources */,
+				DF5B741E238C354E002D0792 /* ProfileView.swift in Sources */,
 				DF5B741A238B70D9002D0792 /* FirebaseTabBarVC.swift in Sources */,
+				DF5B7422238C39F6002D0792 /* ProfileEditVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -672,7 +688,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Pursuit.Pursuitstgram-Firebase-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -690,7 +706,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Pursuit.Pursuitstgram-Firebase-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
