@@ -92,67 +92,67 @@ class FirestoreService {
         }
     }
     
-    //MARK: Posts
-    func createPost(post: Post, completion: @escaping (Result<(), Error>) -> ()) {
-        var fields = post.fieldsDict
-        fields["dateCreated"] = Date()
-        db.collection(FireStoreCollections.posts.rawValue).addDocument(data: fields) { (error) in
-            if let error = error {
-                completion(.failure(error))
-            } else {
-                completion(.success(()))
-            }
-        }
-    }
-    
-    func getAllPosts(sortingCriteria: SortingCriteria?, completion: @escaping (Result<[Post], Error>) -> ()) {
-        let completionHandler: FIRQuerySnapshotBlock = {
-            (snapshot, error) in
-            if let error = error {
-                completion(.failure(error))
-            } else {
-                let posts = snapshot?.documents.compactMap({ (snapshot) -> Post? in
-                    let postID = snapshot.documentID
-                    let post = Post(from: snapshot.data(), id: postID)
-                    return post
-                })
-                completion(.success(posts ?? []))
-            }
-        }
-        db.collection(FireStoreCollections.posts.rawValue).order(by: sortingCriteria?.rawValue ?? "dateCreated", descending: sortingCriteria?.shouldSortAscending ?? true).getDocuments(completion: completionHandler)
-            
-    }
-    
-    func getPosts(forUserID: String, completion: @escaping (Result<[Post], Error>) -> ()) {
-        db.collection(FireStoreCollections.posts.rawValue).whereField("creatorID", isEqualTo: forUserID).getDocuments { (snapshot, error) in
-            if let error = error {
-                completion(.failure(error))
-            } else {
-                let posts = snapshot?.documents.compactMap({ (snapshot) -> Post? in
-                    let postID = snapshot.documentID
-                    let post = Post(from: snapshot.data(), id: postID)
-                    return post
-                })
-                completion(.success(posts ?? []))
-            }
-        }
-    }
-    func getUserNameFromPost(creatorID: String, completion: @escaping (Result<String,Error>) -> ()) {
-        db.collection(FireStoreCollections.users.rawValue).document(creatorID).getDocument { (snapshot, error) in
-            
-            if let error = error {
-                completion(.failure(error))
-            } else if let snapshot = snapshot,
-                let data = snapshot.data() {
-                let userID = snapshot.documentID
-                let user = AppUser(from: data, id: userID)
-                if let appUser = user {
-                    completion(.success(appUser.userName ?? ""))
-                }
-            }
-        }
-    }
-    
+//    //MARK: Posts
+//    func createPost(post: Post, completion: @escaping (Result<(), Error>) -> ()) {
+//        var fields = post.fieldsDict
+//        fields["dateCreated"] = Date()
+//        db.collection(FireStoreCollections.posts.rawValue).addDocument(data: fields) { (error) in
+//            if let error = error {
+//                completion(.failure(error))
+//            } else {
+//                completion(.success(()))
+//            }
+//        }
+//    }
+//    
+//    func getAllPosts(sortingCriteria: SortingCriteria?, completion: @escaping (Result<[Post], Error>) -> ()) {
+//        let completionHandler: FIRQuerySnapshotBlock = {
+//            (snapshot, error) in
+//            if let error = error {
+//                completion(.failure(error))
+//            } else {
+//                let posts = snapshot?.documents.compactMap({ (snapshot) -> Post? in
+//                    let postID = snapshot.documentID
+//                    let post = Post(from: snapshot.data(), id: postID)
+//                    return post
+//                })
+//                completion(.success(posts ?? []))
+//            }
+//        }
+//        db.collection(FireStoreCollections.posts.rawValue).order(by: sortingCriteria?.rawValue ?? "dateCreated", descending: sortingCriteria?.shouldSortAscending ?? true).getDocuments(completion: completionHandler)
+//            
+//    }
+//    
+//    func getPosts(forUserID: String, completion: @escaping (Result<[Post], Error>) -> ()) {
+//        db.collection(FireStoreCollections.posts.rawValue).whereField("creatorID", isEqualTo: forUserID).getDocuments { (snapshot, error) in
+//            if let error = error {
+//                completion(.failure(error))
+//            } else {
+//                let posts = snapshot?.documents.compactMap({ (snapshot) -> Post? in
+//                    let postID = snapshot.documentID
+//                    let post = Post(from: snapshot.data(), id: postID)
+//                    return post
+//                })
+//                completion(.success(posts ?? []))
+//            }
+//        }
+//    }
+//    func getUserNameFromPost(creatorID: String, completion: @escaping (Result<String,Error>) -> ()) {
+//        db.collection(FireStoreCollections.users.rawValue).document(creatorID).getDocument { (snapshot, error) in
+//            
+//            if let error = error {
+//                completion(.failure(error))
+//            } else if let snapshot = snapshot,
+//                let data = snapshot.data() {
+//                let userID = snapshot.documentID
+//                let user = AppUser(from: data, id: userID)
+//                if let appUser = user {
+//                    completion(.success(appUser.userName ?? ""))
+//                }
+//            }
+//        }
+//    }
+//    
     private init () {}
 }
 

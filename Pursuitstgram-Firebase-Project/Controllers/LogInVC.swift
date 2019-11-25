@@ -9,8 +9,8 @@ import FirebaseAuth
 
 class LogInVC: UIViewController {
     
-    var logInEmail: UITextField?
-    var logInPassword: UITextField?
+    var logInEmail: UITextField!
+    var logInPassword: UITextField!
     var loginView = LogInView()
     
     
@@ -35,14 +35,14 @@ class LogInVC: UIViewController {
         
         let saveAction = UIAlertAction(title: "Submit", style: .default) { (action) -> Void in
             
-            guard let email = self.signInEmail?.text, !email.isEmpty, let password = self.signInPassword?.text, !password.isEmpty else {
-                self.makeAlert(with: "Required", and: "Fill both fields")
+            guard let email = self.logInEmail?.text, !email.isEmpty, let password = self.logInPassword?.text, !password.isEmpty else {
+                self.showAlert(with: "Required", and: "Fill both fields")
                 return
             }
             FirebaseAuthService.manager.createNewUser(email: email.lowercased(), password: password) { (result) in
                 switch result {
                 case .failure(let error):
-                    self.makeAlert(with: "Couldn't create user", and: "Error: \(error)")
+                    self.showAlert(with: "Couldn't create user", and: "Error: \(error)")
                 case .success(let newUser):
                     FirestoreService.manager.createAppUser(user: AppUser.init(from: newUser)) { (result) in
                         self.handleLoginResponse(with: result)
@@ -56,13 +56,13 @@ class LogInVC: UIViewController {
         
         alert.addTextField(configurationHandler: {(textField: UITextField!) in
             textField.placeholder = "Enter email address"
-            self.signInEmail = textField
+            self.logInEmail = textField
         })
         
         alert.addTextField(configurationHandler: {(textField: UITextField!) in
             textField.placeholder = "Enter password"
             textField.isSecureTextEntry = true
-            self.signInPassword = textField
+            self.logInPassword = textField
         })
         
         self.present(alert, animated: true, completion: nil)
@@ -101,13 +101,13 @@ class LogInVC: UIViewController {
             UIView.transition(with: window, duration: 0.3, options: .transitionFlipFromBottom, animations: {
                 if FirebaseAuthService.manager.currentUser?.photoURL != nil {
                     window.rootViewController = {
-                        let profileSetupVC = FirebaseTabBar()
+                        let profileSetupVC = FirebaseTabBarVC()
                             profileSetupVC.selectedIndex = 3
                         return profileSetupVC
                     }()
                 } else {
                     window.rootViewController = {
-                        let feedSetupVC = FirebaseTabBar()
+                        let feedSetupVC = FirebaseTabBarVC()
                         feedSetupVC.selectedIndex = 0
                         return feedSetupVC
                     }()
@@ -132,13 +132,13 @@ class LogInVC: UIViewController {
             UIView.transition(with: window, duration: 0.3, options: .transitionFlipFromBottom, animations: {
                 if FirebaseAuthService.manager.currentUser?.photoURL != nil {
                     window.rootViewController = {
-                    let profileSetupVC = FirebaseTabBar()
+                    let profileSetupVC = FirebaseTabBarVC()
                         profileSetupVC.selectedIndex = 3
                     return profileSetupVC
                 }()
                 } else {
                     window.rootViewController = {
-                        let feedSetupVC = FirebaseTabBar()
+                        let feedSetupVC = FirebaseTabBarVC()
                         feedSetupVC.selectedIndex = 0
                         return feedSetupVC
                     }()
@@ -155,8 +155,19 @@ class LogInVC: UIViewController {
 //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        logInEmail?.delegate = self
+        logInPassword?.delegate = self
         setLogInView()
         loginView.signInButton.addTarget(self, action: #selector(signInButtonPressed), for: .touchUpInside)
+    }
+}
+
+//MARK: - Extensions
+extension LogInVC: UITextFieldDelegate {
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        loginView.passwordTxtField.clearsOnBeginEditing = true
+        loginView.emailTxtField.clearsOnBeginEditing = true
+        return true
     }
 }
 
