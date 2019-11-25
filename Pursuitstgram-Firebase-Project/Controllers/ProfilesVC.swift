@@ -156,7 +156,6 @@ class ProfilesVC: UIViewController {
         super.viewWillAppear(animated)
         setDefaultName()
         setDefaultImage()
-//        getPostCount()
     }
 }
 

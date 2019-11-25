@@ -61,7 +61,7 @@ class ProfileView: UIView {
     
     var editButton: UIButton = {
         let button = UIButton()
-        button.setTitle("E d i t ?", for: .normal)
+        button.setTitle("Edit your name?", for: .normal)
         button.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
         return button
     }()

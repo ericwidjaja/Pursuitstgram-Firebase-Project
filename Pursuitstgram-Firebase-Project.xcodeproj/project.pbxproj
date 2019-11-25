@@ -44,6 +44,12 @@
 		DF5B742C238C4D1A002D0792 /* FirebaseStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B742B238C4D1A002D0792 /* FirebaseStorageService.swift */; };
 		DF5B742D238C4D1A002D0792 /* FirebaseStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B742B238C4D1A002D0792 /* FirebaseStorageService.swift */; };
 		DF5B742E238C4D1A002D0792 /* FirebaseStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B742B238C4D1A002D0792 /* FirebaseStorageService.swift */; };
+		DF5B7430238C7634002D0792 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B742F238C7634002D0792 /* FeedVC.swift */; };
+		DF5B7431238C7634002D0792 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B742F238C7634002D0792 /* FeedVC.swift */; };
+		DF5B7432238C7634002D0792 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B742F238C7634002D0792 /* FeedVC.swift */; };
+		DF5B7434238C76C3002D0792 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B7433238C76C3002D0792 /* FeedView.swift */; };
+		DF5B7435238C76C3002D0792 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B7433238C76C3002D0792 /* FeedView.swift */; };
+		DF5B7436238C76C3002D0792 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B7433238C76C3002D0792 /* FeedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +102,8 @@
 		DF5B741B238C354E002D0792 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		DF5B7427238C4712002D0792 /* ProfilesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilesVC.swift; sourceTree = "<group>"; };
 		DF5B742B238C4D1A002D0792 /* FirebaseStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageService.swift; sourceTree = "<group>"; };
+		DF5B742F238C7634002D0792 /* FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
+		DF5B7433238C76C3002D0792 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		F018F81C11946576359DF32E /* Pods-Pursuitstgram-Firebase-ProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pursuitstgram-Firebase-ProjectTests.release.xcconfig"; path = "Target Support Files/Pods-Pursuitstgram-Firebase-ProjectTests/Pods-Pursuitstgram-Firebase-ProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -202,6 +210,7 @@
 				DF28B31B23837B0400AA8CE0 /* LogInVC.swift */,
 				DF5B7417238B70D9002D0792 /* FirebaseTabBarVC.swift */,
 				DF5B7427238C4712002D0792 /* ProfilesVC.swift */,
+				DF5B742F238C7634002D0792 /* FeedVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -211,6 +220,7 @@
 			children = (
 				DF28B3A52389A8CC00AA8CE0 /* LogInView.swift */,
 				DF5B741B238C354E002D0792 /* ProfileView.swift */,
+				DF5B7433238C76C3002D0792 /* FeedView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -488,12 +498,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF5B7434238C76C3002D0792 /* FeedView.swift in Sources */,
 				DF5B7410238B7000002D0792 /* AppUser.swift in Sources */,
 				DF5B740C238B6B85002D0792 /* FirestoreService.swift in Sources */,
 				DF5B741C238C354E002D0792 /* ProfileView.swift in Sources */,
 				DF28B3A62389A8CC00AA8CE0 /* LogInView.swift in Sources */,
 				DF28B31C23837B0400AA8CE0 /* LogInVC.swift in Sources */,
 				DF5B7418238B70D9002D0792 /* FirebaseTabBarVC.swift in Sources */,
+				DF5B7430238C7634002D0792 /* FeedVC.swift in Sources */,
 				DF28B31823837B0400AA8CE0 /* AppDelegate.swift in Sources */,
 				DF5B7428238C4712002D0792 /* ProfilesVC.swift in Sources */,
 				DF5B7407238B64E7002D0792 /* FirebaseAuthService.swift in Sources */,
@@ -507,6 +519,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF5B7435238C76C3002D0792 /* FeedView.swift in Sources */,
+				DF5B7431238C7634002D0792 /* FeedVC.swift in Sources */,
 				DF5B7429238C4712002D0792 /* ProfilesVC.swift in Sources */,
 				DF5B7411238B7000002D0792 /* AppUser.swift in Sources */,
 				DF28B33223837B0900AA8CE0 /* Pursuitstgram_Firebase_ProjectTests.swift in Sources */,
@@ -522,6 +536,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF5B7436238C76C3002D0792 /* FeedView.swift in Sources */,
+				DF5B7432238C7634002D0792 /* FeedVC.swift in Sources */,
 				DF5B742A238C4712002D0792 /* ProfilesVC.swift in Sources */,
 				DF5B7412238B7000002D0792 /* AppUser.swift in Sources */,
 				DF28B33D23837B0900AA8CE0 /* Pursuitstgram_Firebase_ProjectUITests.swift in Sources */,
