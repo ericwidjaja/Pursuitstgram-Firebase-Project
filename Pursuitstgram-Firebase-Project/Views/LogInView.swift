@@ -129,7 +129,6 @@ class LogInView: UIView {
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
         setConstraints()
-        
     }
     
     required init?(coder aDecoder: NSCoder) {

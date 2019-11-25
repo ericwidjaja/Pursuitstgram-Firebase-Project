@@ -59,12 +59,11 @@ class ProfileView: UIView {
         let button = UIButton()
         button.setTitle("Edit", for: .normal)
         button.setTitleColor(.systemTeal, for: .normal)
-//        button.addTarget(self, action: #selector(displayForm), for: .touchUpInside)
         return button
     }()
     
 //MARK: - Constraints
-    private func profileConstraints() {
+    func profileConstraints() {
         profileLabelConstraints()
         imageConstraints()
         nameConstraints()
@@ -72,7 +71,6 @@ class ProfileView: UIView {
         emailLabelConstraints()
         submissionConstraints()
         addButtonConstraints()
-//        emailLabel()
     }
     
     
@@ -130,5 +128,13 @@ class ProfileView: UIView {
             addButton.heightAnchor.constraint(equalToConstant: 50),
             addButton.widthAnchor.constraint(equalToConstant: 50)])
     }
-  
+    
+    override init(frame: CGRect) {
+        super.init(frame: UIScreen.main.bounds)
+        profileConstraints()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
 }
