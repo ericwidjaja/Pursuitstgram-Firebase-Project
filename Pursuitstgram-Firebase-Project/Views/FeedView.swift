@@ -7,7 +7,8 @@
 import UIKit
 
 class FeedView: UIView {
-    
+
+//MARK: - Objects
     var feedLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.init(name: "Noteworthy-Bold", size: 40)
@@ -22,7 +23,7 @@ class FeedView: UIView {
         layout.estimatedItemSize = CGSize(width: 160, height: 160)
         let collection = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         collection.backgroundColor = .white
-//        collection.register(FeedCell.self, forCellWithReuseIdentifier: "feedCell")
+        collection.register(FeedCellCV.self, forCellWithReuseIdentifier: "feedCell")
         return collection
     }()
     

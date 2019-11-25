@@ -18,8 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = FeedVC()
-//        window?.rootViewController = LogInVC()
+//        window?.rootViewController = DetailImageVC ()
+        window?.rootViewController = LogInVC()
         window?.makeKeyAndVisible()
     }
 

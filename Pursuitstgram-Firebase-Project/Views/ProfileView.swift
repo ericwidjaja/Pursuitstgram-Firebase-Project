@@ -8,7 +8,7 @@ import UIKit
 
 class ProfileView: UIView {
 
-//MARK: -Objects
+//MARK: - Objects
     var profileLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.init(name: "Noteworthy-Bold", size: 40)
