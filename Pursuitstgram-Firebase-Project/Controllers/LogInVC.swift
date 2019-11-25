@@ -169,5 +169,14 @@ extension LogInVC: UITextFieldDelegate {
         loginView.emailTxtField.clearsOnBeginEditing = true
         return true
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        logInPassword.resignFirstResponder()
+        logInEmail.resignFirstResponder()
+        return (true)
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 }
 
