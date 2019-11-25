@@ -25,7 +25,10 @@
 		DF28B3AC2389AF7C00AA8CE0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF28B3AB2389AF7C00AA8CE0 /* GoogleService-Info.plist */; };
 		DF28B3AD2389AF7C00AA8CE0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF28B3AB2389AF7C00AA8CE0 /* GoogleService-Info.plist */; };
 		DF28B3AE2389AF7C00AA8CE0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF28B3AB2389AF7C00AA8CE0 /* GoogleService-Info.plist */; };
-		DF5B7407238B64E7002D0792 /* FirebaseAuthMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B7406238B64E7002D0792 /* FirebaseAuthMgr.swift */; };
+		DF5B7407238B64E7002D0792 /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B7406238B64E7002D0792 /* FirebaseAuthService.swift */; };
+		DF5B740C238B6B85002D0792 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B740B238B6B85002D0792 /* FirestoreService.swift */; };
+		DF5B740D238B6B85002D0792 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B740B238B6B85002D0792 /* FirestoreService.swift */; };
+		DF5B740E238B6B85002D0792 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B740B238B6B85002D0792 /* FirestoreService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,7 +74,8 @@
 		DF28B33E23837B0900AA8CE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF28B3A52389A8CC00AA8CE0 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		DF28B3AB2389AF7C00AA8CE0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		DF5B7406238B64E7002D0792 /* FirebaseAuthMgr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthMgr.swift; sourceTree = "<group>"; };
+		DF5B7406238B64E7002D0792 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
+		DF5B740B238B6B85002D0792 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		F018F81C11946576359DF32E /* Pods-Pursuitstgram-Firebase-ProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pursuitstgram-Firebase-ProjectTests.release.xcconfig"; path = "Target Support Files/Pods-Pursuitstgram-Firebase-ProjectTests/Pods-Pursuitstgram-Firebase-ProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -198,7 +202,8 @@
 		DF5B740A238B656F002D0792 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				DF5B7406238B64E7002D0792 /* FirebaseAuthMgr.swift */,
+				DF5B7406238B64E7002D0792 /* FirebaseAuthService.swift */,
+				DF5B740B238B6B85002D0792 /* FirestoreService.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -458,10 +463,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF5B740C238B6B85002D0792 /* FirestoreService.swift in Sources */,
 				DF28B3A62389A8CC00AA8CE0 /* LogInView.swift in Sources */,
 				DF28B31C23837B0400AA8CE0 /* LogInVC.swift in Sources */,
 				DF28B31823837B0400AA8CE0 /* AppDelegate.swift in Sources */,
-				DF5B7407238B64E7002D0792 /* FirebaseAuthMgr.swift in Sources */,
+				DF5B7407238B64E7002D0792 /* FirebaseAuthService.swift in Sources */,
 				DF28B31A23837B0400AA8CE0 /* SceneDelegate.swift in Sources */,
 				DF28B32223837B0400AA8CE0 /* Pursuitstgram_Firebase_Project.xcdatamodeld in Sources */,
 			);
@@ -472,6 +478,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF28B33223837B0900AA8CE0 /* Pursuitstgram_Firebase_ProjectTests.swift in Sources */,
+				DF5B740D238B6B85002D0792 /* FirestoreService.swift in Sources */,
 				DF28B3A72389A8CC00AA8CE0 /* LogInView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -481,6 +488,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF28B33D23837B0900AA8CE0 /* Pursuitstgram_Firebase_ProjectUITests.swift in Sources */,
+				DF5B740E238B6B85002D0792 /* FirestoreService.swift in Sources */,
 				DF28B3A82389A8CC00AA8CE0 /* LogInView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
