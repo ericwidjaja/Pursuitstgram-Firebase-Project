@@ -32,9 +32,6 @@
 		DF5B7410238B7000002D0792 /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B740F238B7000002D0792 /* AppUser.swift */; };
 		DF5B7411238B7000002D0792 /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B740F238B7000002D0792 /* AppUser.swift */; };
 		DF5B7412238B7000002D0792 /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B740F238B7000002D0792 /* AppUser.swift */; };
-		DF5B7418238B70D9002D0792 /* FirebaseTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B7417238B70D9002D0792 /* FirebaseTabBarVC.swift */; };
-		DF5B7419238B70D9002D0792 /* FirebaseTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B7417238B70D9002D0792 /* FirebaseTabBarVC.swift */; };
-		DF5B741A238B70D9002D0792 /* FirebaseTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B7417238B70D9002D0792 /* FirebaseTabBarVC.swift */; };
 		DF5B741C238C354E002D0792 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B741B238C354E002D0792 /* ProfileView.swift */; };
 		DF5B741D238C354E002D0792 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B741B238C354E002D0792 /* ProfileView.swift */; };
 		DF5B741E238C354E002D0792 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B741B238C354E002D0792 /* ProfileView.swift */; };
@@ -62,6 +59,12 @@
 		DF5B7448238C8A08002D0792 /* DetailImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B7447238C8A08002D0792 /* DetailImageVC.swift */; };
 		DF5B7449238C8A08002D0792 /* DetailImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B7447238C8A08002D0792 /* DetailImageVC.swift */; };
 		DF5B744A238C8A08002D0792 /* DetailImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B7447238C8A08002D0792 /* DetailImageVC.swift */; };
+		DF5B744C238C9164002D0792 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B744B238C9164002D0792 /* Post.swift */; };
+		DF5B744D238C9164002D0792 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B744B238C9164002D0792 /* Post.swift */; };
+		DF5B744E238C9164002D0792 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B744B238C9164002D0792 /* Post.swift */; };
+		DF5B7454238C9D3F002D0792 /* PursuitstgramTabBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B7453238C9D3F002D0792 /* PursuitstgramTabBC.swift */; };
+		DF5B7455238C9D3F002D0792 /* PursuitstgramTabBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B7453238C9D3F002D0792 /* PursuitstgramTabBC.swift */; };
+		DF5B7456238C9D3F002D0792 /* PursuitstgramTabBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B7453238C9D3F002D0792 /* PursuitstgramTabBC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,7 +113,6 @@
 		DF5B7406238B64E7002D0792 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
 		DF5B740B238B6B85002D0792 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		DF5B740F238B7000002D0792 /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
-		DF5B7417238B70D9002D0792 /* FirebaseTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseTabBarVC.swift; sourceTree = "<group>"; };
 		DF5B741B238C354E002D0792 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		DF5B7427238C4712002D0792 /* ProfilesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilesVC.swift; sourceTree = "<group>"; };
 		DF5B742B238C4D1A002D0792 /* FirebaseStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageService.swift; sourceTree = "<group>"; };
@@ -120,6 +122,8 @@
 		DF5B743F238C8195002D0792 /* UpLoadImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpLoadImageVC.swift; sourceTree = "<group>"; };
 		DF5B7443238C820B002D0792 /* UpLoadImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpLoadImageView.swift; sourceTree = "<group>"; };
 		DF5B7447238C8A08002D0792 /* DetailImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImageVC.swift; sourceTree = "<group>"; };
+		DF5B744B238C9164002D0792 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		DF5B7453238C9D3F002D0792 /* PursuitstgramTabBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PursuitstgramTabBC.swift; sourceTree = SOURCE_ROOT; };
 		F018F81C11946576359DF32E /* Pods-Pursuitstgram-Firebase-ProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pursuitstgram-Firebase-ProjectTests.release.xcconfig"; path = "Target Support Files/Pods-Pursuitstgram-Firebase-ProjectTests/Pods-Pursuitstgram-Firebase-ProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -223,8 +227,8 @@
 		DF28B3A42389A84E00AA8CE0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DF5B7453238C9D3F002D0792 /* PursuitstgramTabBC.swift */,
 				DF28B31B23837B0400AA8CE0 /* LogInVC.swift */,
-				DF5B7417238B70D9002D0792 /* FirebaseTabBarVC.swift */,
 				DF5B7427238C4712002D0792 /* ProfilesVC.swift */,
 				DF5B742F238C7634002D0792 /* FeedVC.swift */,
 				DF5B743F238C8195002D0792 /* UpLoadImageVC.swift */,
@@ -249,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				DF5B740F238B7000002D0792 /* AppUser.swift */,
+				DF5B744B238C9164002D0792 /* Post.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -527,13 +532,14 @@
 				DF5B743C238C7D76002D0792 /* FeedCellCV.swift in Sources */,
 				DF5B7448238C8A08002D0792 /* DetailImageVC.swift in Sources */,
 				DF28B31C23837B0400AA8CE0 /* LogInVC.swift in Sources */,
-				DF5B7418238B70D9002D0792 /* FirebaseTabBarVC.swift in Sources */,
 				DF5B7430238C7634002D0792 /* FeedVC.swift in Sources */,
 				DF28B31823837B0400AA8CE0 /* AppDelegate.swift in Sources */,
 				DF5B7428238C4712002D0792 /* ProfilesVC.swift in Sources */,
+				DF5B7454238C9D3F002D0792 /* PursuitstgramTabBC.swift in Sources */,
 				DF5B7407238B64E7002D0792 /* FirebaseAuthService.swift in Sources */,
 				DF28B31A23837B0400AA8CE0 /* SceneDelegate.swift in Sources */,
 				DF5B742C238C4D1A002D0792 /* FirebaseStorageService.swift in Sources */,
+				DF5B744C238C9164002D0792 /* Post.swift in Sources */,
 				DF28B32223837B0400AA8CE0 /* Pursuitstgram_Firebase_Project.xcdatamodeld in Sources */,
 				DF5B7440238C8195002D0792 /* UpLoadImageVC.swift in Sources */,
 			);
@@ -552,10 +558,11 @@
 				DF5B743D238C7D76002D0792 /* FeedCellCV.swift in Sources */,
 				DF28B33223837B0900AA8CE0 /* Pursuitstgram_Firebase_ProjectTests.swift in Sources */,
 				DF5B740D238B6B85002D0792 /* FirestoreService.swift in Sources */,
+				DF5B7455238C9D3F002D0792 /* PursuitstgramTabBC.swift in Sources */,
+				DF5B744D238C9164002D0792 /* Post.swift in Sources */,
 				DF28B3A72389A8CC00AA8CE0 /* LogInView.swift in Sources */,
 				DF5B741D238C354E002D0792 /* ProfileView.swift in Sources */,
 				DF5B742D238C4D1A002D0792 /* FirebaseStorageService.swift in Sources */,
-				DF5B7419238B70D9002D0792 /* FirebaseTabBarVC.swift in Sources */,
 				DF5B7441238C8195002D0792 /* UpLoadImageVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -573,10 +580,11 @@
 				DF5B743E238C7D76002D0792 /* FeedCellCV.swift in Sources */,
 				DF28B33D23837B0900AA8CE0 /* Pursuitstgram_Firebase_ProjectUITests.swift in Sources */,
 				DF5B740E238B6B85002D0792 /* FirestoreService.swift in Sources */,
+				DF5B7456238C9D3F002D0792 /* PursuitstgramTabBC.swift in Sources */,
+				DF5B744E238C9164002D0792 /* Post.swift in Sources */,
 				DF28B3A82389A8CC00AA8CE0 /* LogInView.swift in Sources */,
 				DF5B741E238C354E002D0792 /* ProfileView.swift in Sources */,
 				DF5B742E238C4D1A002D0792 /* FirebaseStorageService.swift in Sources */,
-				DF5B741A238B70D9002D0792 /* FirebaseTabBarVC.swift in Sources */,
 				DF5B7442238C8195002D0792 /* UpLoadImageVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -28,7 +28,6 @@ class FirebaseStorageService {
         case .upload:
             imagesFolderReference = storageReference.child("uploadImages")
         }
-        
     }
     
     

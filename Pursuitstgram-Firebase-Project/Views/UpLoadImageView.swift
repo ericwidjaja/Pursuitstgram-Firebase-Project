@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Photos
 
 class UpLoadImageView: UIView {
 
@@ -14,7 +15,7 @@ class UpLoadImageView: UIView {
   var uploadLabel: UILabel = {
         let label = UILabel()
     label.font = UIFont.init(name: "Noteworthy-Bold", size: 35)
-        label.text = "Upload Image"
+        label.text = "upload Image"
         label.textAlignment = .center
         label.textColor = .white
         return label
@@ -27,6 +28,13 @@ class UpLoadImageView: UIView {
         return image
     }()
     
+    var uploadAddButton: UIButton = {
+        let button = UIButton()
+        button.setImage(#imageLiteral(resourceName: "upLoad"), for: .normal)
+        button.setTitleColor(.systemTeal, for: .normal)
+        return button
+    }()
+    
     var uploadButton: UIButton = {
         let button = UIButton()
         button.setTitle("Upload", for: .normal)
@@ -34,7 +42,7 @@ class UpLoadImageView: UIView {
         return button
     }()
     
-    lazy var feedViewArray = [self.uploadLabel, self.uploadImageView, self.uploadButton]
+    lazy var feedViewArray = [self.uploadLabel, self.uploadImageView, self.uploadAddButton, self.uploadButton]
     
     
 //MARK:Add ViewsToSubviews
@@ -50,6 +58,7 @@ class UpLoadImageView: UIView {
         addViewsToSubView()
         uploadLabelConstraints()
         uploadImgConstraints()
+        uploadAddButtonConstraints()
         uploadButtonConstraints()
     }
     private func uploadLabelConstraints() {
@@ -65,6 +74,14 @@ class UpLoadImageView: UIView {
             uploadImageView.widthAnchor.constraint(equalToConstant: 250),
             uploadImageView.heightAnchor.constraint(equalToConstant: 250)])
     }
+    private func uploadAddButtonConstraints() {
+        NSLayoutConstraint.activate([
+            uploadAddButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -250),
+            uploadAddButton.heightAnchor.constraint(equalToConstant: 60),
+            uploadAddButton.widthAnchor.constraint(equalToConstant: 60),
+            uploadAddButton.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor)])
+    }
+    
     private func uploadButtonConstraints() {
         NSLayoutConstraint.activate([
             uploadButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -150),

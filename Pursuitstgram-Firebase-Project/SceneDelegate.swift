@@ -18,11 +18,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.windowScene = windowScene
-//        window?.rootViewController = DetailImageVC ()
-        window?.rootViewController = LogInVC()
-        window?.makeKeyAndVisible()
+        //For returning user
+//        if FirebaseAuthService.manager.currentUser != nil {
+//            window?.rootViewController = PursuitstgramTabBC()
+//        } else {
+        //trying if DetailImageVC is showing up
+//            window?.rootViewController = DetailImageVC ()
+            window?.rootViewController = LogInVC()
+            window?.makeKeyAndVisible()
+//        }
     }
-
+    
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.

@@ -28,7 +28,7 @@ class LogInVC: UIViewController {
         }
     }
     
-    @objc func displayForm(){
+    @objc func createAcctForm(){
         let alert = UIAlertController(title: "Sign In", message: "Create an account", preferredStyle: .alert)
         
         let cancelAction = UIAlertAction(title: "Cancel" , style: .cancel)
@@ -50,7 +50,6 @@ class LogInVC: UIViewController {
                 }
             }
         }
-        
         alert.addAction(cancelAction)
         alert.addAction(saveAction)
         
@@ -75,13 +74,13 @@ class LogInVC: UIViewController {
         present(alertVC, animated: true, completion: nil)
     }
     
-    //MARK: SignIn-handling
-    private func handleCreateAccountResponse(with result: Result<User, Error>) {
+    //MARK: SignIn-Manager
+    private func createAcctResult(with result: Result<User, Error>) {
         DispatchQueue.main.async { [weak self] in
             switch result {
             case .success(let user):
                 FirestoreService.manager.createAppUser(user: AppUser(from: user)) { [weak self] newResult in
-                    self?.handleCreatedUserInFirestore(result: newResult)
+                    self?.createUserInFirestore(result: newResult)
                 }
             case .failure(let error):
                 self?.showAlert(with: "Error creating user", and: "An error occured while creating new account \(error)")
@@ -89,7 +88,7 @@ class LogInVC: UIViewController {
         }
     }
     
-    private func handleCreatedUserInFirestore(result: Result<(), Error>) {
+    private func createUserInFirestore(result: Result<(), Error>) {
         switch result {
         case .success:
             guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
@@ -98,16 +97,16 @@ class LogInVC: UIViewController {
                     return
             }
             
-            UIView.transition(with: window, duration: 0.3, options: .transitionFlipFromBottom, animations: {
+            UIView.transition(with: window, duration: 0.75, options: .curveEaseInOut, animations: {
                 if FirebaseAuthService.manager.currentUser?.photoURL != nil {
                     window.rootViewController = {
-                        let profileSetupVC = FirebaseTabBarVC()
+                        let profileSetupVC = PursuitstgramTabBC()
                             profileSetupVC.selectedIndex = 3
                         return profileSetupVC
                     }()
                 } else {
                     window.rootViewController = {
-                        let feedSetupVC = FirebaseTabBarVC()
+                        let feedSetupVC = PursuitstgramTabBC()
                         feedSetupVC.selectedIndex = 0
                         return feedSetupVC
                     }()
@@ -118,7 +117,7 @@ class LogInVC: UIViewController {
         }
     }
     
-    //MARK: Login-handling
+    //MARK: Login-Manager
     private func handleLoginResponse(with result: Result<(), Error>) {
         switch result {
         case .failure(let error):
@@ -129,16 +128,16 @@ class LogInVC: UIViewController {
                 else {
                 return
             }
-            UIView.transition(with: window, duration: 0.3, options: .transitionFlipFromBottom, animations: {
+            UIView.transition(with: window, duration: 0.75, options: .curveEaseInOut, animations: {
                 if FirebaseAuthService.manager.currentUser?.photoURL != nil {
                     window.rootViewController = {
-                    let profileSetupVC = FirebaseTabBarVC()
+                    let profileSetupVC = PursuitstgramTabBC()
                         profileSetupVC.selectedIndex = 3
                     return profileSetupVC
                 }()
                 } else {
                     window.rootViewController = {
-                        let feedSetupVC = FirebaseTabBarVC()
+                        let feedSetupVC = PursuitstgramTabBC()
                         feedSetupVC.selectedIndex = 0
                         return feedSetupVC
                     }()
@@ -159,6 +158,7 @@ class LogInVC: UIViewController {
         logInPassword?.delegate = self
         setLogInView()
         loginView.signInButton.addTarget(self, action: #selector(signInButtonPressed), for: .touchUpInside)
+        loginView.createNewAcctButton.addTarget(self, action: #selector(createAcctForm), for: .touchUpInside)
     }
 }
 
@@ -169,7 +169,6 @@ extension LogInVC: UITextFieldDelegate {
         loginView.emailTxtField.clearsOnBeginEditing = true
         return true
     }
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         logInPassword.resignFirstResponder()
         logInEmail.resignFirstResponder()

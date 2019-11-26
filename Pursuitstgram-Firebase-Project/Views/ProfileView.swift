@@ -55,13 +55,12 @@ class ProfileView: UIView {
     var addButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "add"), for: .normal)
-        
         return button
     }()
     
     var editButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Edit your name?", for: .normal)
+        button.setTitle("Edit your profile?", for: .normal)
         button.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
         return button
     }()
@@ -112,7 +111,7 @@ class ProfileView: UIView {
         NSLayoutConstraint.activate([
             editButton.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10),
             editButton.centerXAnchor.constraint(equalTo: nameLabel.centerXAnchor),
-            editButton.widthAnchor.constraint(equalToConstant: 80)])
+            editButton.widthAnchor.constraint(equalToConstant: 180)])
     }
     private func emailLabelConstraints() {
         NSLayoutConstraint.activate([
