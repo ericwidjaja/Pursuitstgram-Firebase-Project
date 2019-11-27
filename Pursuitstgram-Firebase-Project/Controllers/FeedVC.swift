@@ -15,10 +15,11 @@ class FeedVC: UIViewController {
     
     var feedView = FeedView()
     
+    var feedCell = FeedCellCV()
+    
     var postImages = [Post]() {
         didSet {
             feedView.feedCollectionView.reloadData()
-            
         }
     }
 
@@ -30,7 +31,7 @@ class FeedVC: UIViewController {
                 print(error)
             case .success(let postsFromFirebase):
                 DispatchQueue.main.async {
-                    self.posts = postsFromFirebase
+                    self.postImages = postsFromFirebase
                 }
             }
         }
@@ -61,7 +62,7 @@ extension FeedVC: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "feedCell", for: indexPath) as? FeedCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "feedCell", for: indexPath) as? FeedCellCV else {
             return UICollectionViewCell()
         }
         let post = postImages[indexPath.row]
@@ -87,12 +88,12 @@ extension FeedVC: UICollectionViewDelegate, UICollectionViewDataSource {
         }
         return cell
     }
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let singlePost = postImages[indexPath.row]
-        let imageDetailVC = DetailImageVC()
-        imageDetailVC.post = singlePost
-        present(DetailImageVC, animated: true, completion: nil)
-    }
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        let singlePost = postImages[indexPath.row]
+//        let imageDetailVC = DetailImageVC()
+//        imageDetailVC.post = singlePost
+//        present(DetailImageVC, animated: true, completion: nil)
+//    }
     
 }
 

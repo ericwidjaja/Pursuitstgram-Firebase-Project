@@ -22,9 +22,6 @@
 		DF28B3A62389A8CC00AA8CE0 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF28B3A52389A8CC00AA8CE0 /* LogInView.swift */; };
 		DF28B3A72389A8CC00AA8CE0 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF28B3A52389A8CC00AA8CE0 /* LogInView.swift */; };
 		DF28B3A82389A8CC00AA8CE0 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF28B3A52389A8CC00AA8CE0 /* LogInView.swift */; };
-		DF28B3AC2389AF7C00AA8CE0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF28B3AB2389AF7C00AA8CE0 /* GoogleService-Info.plist */; };
-		DF28B3AD2389AF7C00AA8CE0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF28B3AB2389AF7C00AA8CE0 /* GoogleService-Info.plist */; };
-		DF28B3AE2389AF7C00AA8CE0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF28B3AB2389AF7C00AA8CE0 /* GoogleService-Info.plist */; };
 		DF5B7407238B64E7002D0792 /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B7406238B64E7002D0792 /* FirebaseAuthService.swift */; };
 		DF5B740C238B6B85002D0792 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B740B238B6B85002D0792 /* FirestoreService.swift */; };
 		DF5B740D238B6B85002D0792 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B740B238B6B85002D0792 /* FirestoreService.swift */; };
@@ -65,6 +62,7 @@
 		DF5B7454238C9D3F002D0792 /* PursuitstgramTabBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B7453238C9D3F002D0792 /* PursuitstgramTabBC.swift */; };
 		DF5B7455238C9D3F002D0792 /* PursuitstgramTabBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B7453238C9D3F002D0792 /* PursuitstgramTabBC.swift */; };
 		DF5B7456238C9D3F002D0792 /* PursuitstgramTabBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B7453238C9D3F002D0792 /* PursuitstgramTabBC.swift */; };
+		DF5B7483238F0BC8002D0792 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF5B7482238F0BC8002D0792 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,7 +107,6 @@
 		DF28B33C23837B0900AA8CE0 /* Pursuitstgram_Firebase_ProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pursuitstgram_Firebase_ProjectUITests.swift; sourceTree = "<group>"; };
 		DF28B33E23837B0900AA8CE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF28B3A52389A8CC00AA8CE0 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
-		DF28B3AB2389AF7C00AA8CE0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DF5B7406238B64E7002D0792 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
 		DF5B740B238B6B85002D0792 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		DF5B740F238B7000002D0792 /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
@@ -124,6 +121,7 @@
 		DF5B7447238C8A08002D0792 /* DetailImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImageVC.swift; sourceTree = "<group>"; };
 		DF5B744B238C9164002D0792 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		DF5B7453238C9D3F002D0792 /* PursuitstgramTabBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PursuitstgramTabBC.swift; sourceTree = SOURCE_ROOT; };
+		DF5B7482238F0BC8002D0792 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F018F81C11946576359DF32E /* Pods-Pursuitstgram-Firebase-ProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pursuitstgram-Firebase-ProjectTests.release.xcconfig"; path = "Target Support Files/Pods-Pursuitstgram-Firebase-ProjectTests/Pods-Pursuitstgram-Firebase-ProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -200,7 +198,7 @@
 				DF28B32323837B0900AA8CE0 /* Assets.xcassets */,
 				DF28B32523837B0900AA8CE0 /* LaunchScreen.storyboard */,
 				DF28B32823837B0900AA8CE0 /* Info.plist */,
-				DF28B3AB2389AF7C00AA8CE0 /* GoogleService-Info.plist */,
+				DF5B7482238F0BC8002D0792 /* GoogleService-Info.plist */,
 				DF28B32023837B0400AA8CE0 /* Pursuitstgram_Firebase_Project.xcdatamodeld */,
 			);
 			path = "Pursuitstgram-Firebase-Project";
@@ -391,7 +389,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF28B32723837B0900AA8CE0 /* LaunchScreen.storyboard in Resources */,
-				DF28B3AC2389AF7C00AA8CE0 /* GoogleService-Info.plist in Resources */,
+				DF5B7483238F0BC8002D0792 /* GoogleService-Info.plist in Resources */,
 				DF28B32423837B0900AA8CE0 /* Assets.xcassets in Resources */,
 				DF28B31F23837B0400AA8CE0 /* Main.storyboard in Resources */,
 			);
@@ -401,7 +399,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF28B3AD2389AF7C00AA8CE0 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,7 +406,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF28B3AE2389AF7C00AA8CE0 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

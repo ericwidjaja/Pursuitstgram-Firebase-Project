@@ -59,20 +59,20 @@ class ProfilesVC: UIViewController {
         }
     }
 
-//    private func getPostCount() {
-//        if let userUID = FirebaseAuthService.manager.currentUser?.uid {
-//            DispatchQueue.global(qos: .default).async {
-//                FirestoreService.manager.getPosts(forUserID: userUID) { (result) in
-//                    switch result {
-//                    case .failure(let error):
-//                        print(error)
-//                    case .success(let posts):
-//                        self.postCount = posts.count
-//                    }
-//                }
-//            }
-//        }
-//    }
+    private func getPostCount() {
+        if let userUID = FirebaseAuthService.manager.currentUser?.uid {
+            DispatchQueue.global(qos: .default).async {
+                FirestoreService.manager.getPosts(forUserID: userUID) { (result) in
+                    switch result {
+                    case .failure(let error):
+                        print(error)
+                    case .success(let posts):
+                        self.postCount = posts.count
+                    }
+                }
+            }
+        }
+    }
 
     private func updateUserNameField(newDisplayName: String) {
         guard let userUID = FirebaseAuthService.manager.currentUser?.uid else {
@@ -125,6 +125,7 @@ class ProfilesVC: UIViewController {
         })
         self.present(alert, animated: true, completion: nil)
     }
+    
     @objc func presentPhotoPickerController() {
         DispatchQueue.main.async{
             let imagePickerViewController = UIImagePickerController()
@@ -153,6 +154,7 @@ class ProfilesVC: UIViewController {
         super.viewWillAppear(animated)
         setDefaultName()
         setDefaultImage()
+        getPostCount()
     }
 }
 
@@ -166,7 +168,7 @@ extension ProfilesVC: UIImagePickerControllerDelegate, UINavigationControllerDel
         self.image = image
         
         guard let imageData = image.jpegData(compressionQuality: 1) else {
-            //MARK: TODO - gracefully fail out without interrupting UX
+            
             showAlert(with: "Error", and: "could not compress image")
             return
         }
