@@ -98,8 +98,8 @@ class ProfileView: UIView {
         NSLayoutConstraint.activate([
             userImage.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
             userImage.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor),
-            userImage.widthAnchor.constraint(equalToConstant: 150),
-            userImage.heightAnchor.constraint(equalToConstant: 175)])
+            userImage.widthAnchor.constraint(equalToConstant: 300),
+            userImage.heightAnchor.constraint(equalToConstant: 160)])
     }
     private func nameConstraints() {
         NSLayoutConstraint.activate([
@@ -127,10 +127,10 @@ class ProfileView: UIView {
     }
     private func addButtonConstraints() {
         NSLayoutConstraint.activate([
-            addButton.topAnchor.constraint(equalTo: userImage.bottomAnchor, constant: -15),
-            addButton.trailingAnchor.constraint(equalTo: userImage.trailingAnchor,constant: 0),
-            addButton.heightAnchor.constraint(equalToConstant: 40),
-            addButton.widthAnchor.constraint(equalToConstant: 40)])
+            addButton.topAnchor.constraint(equalTo: userImage.bottomAnchor, constant: -10),
+            addButton.trailingAnchor.constraint(equalTo: userImage.trailingAnchor,constant: 1),
+            addButton.heightAnchor.constraint(equalToConstant: 45),
+            addButton.widthAnchor.constraint(equalToConstant: 45)])
     }
     
     override init(frame: CGRect) {
