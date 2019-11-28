@@ -28,8 +28,8 @@ class ProfilesVC: UIViewController {
 
 //MARK: - Setup Method
     private func setupEmailLabel() {
-        if let email = FirebaseAuthService.manager.currentUser?.email {
-            profilesView.emailLabel.text = "\(email)"
+        if let emailLabel = FirebaseAuthService.manager.currentUser?.email {
+            profilesView.emailLabel.text = "\(emailLabel)"
         }
     }
 
@@ -83,7 +83,7 @@ class ProfilesVC: UIViewController {
             case .failure(let error):
                 print(error)
             case .success:
-                print("updated users in FireStore")
+                print("Users profiles are updated")
             }
         }
     }
@@ -98,7 +98,6 @@ class ProfilesVC: UIViewController {
 
         //create save button
         let saveAction = UIAlertAction(title: "Save", style: .default) { (action) -> Void in
-
             guard let newName = self.displayNameTextBox?.text, !newName.isEmpty else {
                 self.showAlert(with: "Required", and: "Fill both fields")
                 return
@@ -107,7 +106,7 @@ class ProfilesVC: UIViewController {
             FirebaseAuthService.manager.updateUserFields(userName: newName) { (result) in
                 switch result {
                 case .success:
-                    self.showAlert(with: "Display Name Changed!", and: "successful!")
+                    self.showAlert(with: "Successful!", and: "Your display name has changed!")
                     self.profilesView.nameLabel.text = newName
                     self.updateUserNameField(newDisplayName: newName)
                 case .failure(let error):
@@ -118,7 +117,7 @@ class ProfilesVC: UIViewController {
         alert.addAction(cancelAction)
         alert.addAction(saveAction)
         alert.addTextField(configurationHandler: {(textField: UITextField!) in
-            textField.placeholder = "Enter New Display Name"
+            textField.placeholder = "What is the New Display Name?"
             self.displayNameTextBox = textField
         })
         self.present(alert, animated: true, completion: nil)
@@ -138,6 +137,10 @@ class ProfilesVC: UIViewController {
     private func setProfilesView() {
         view.addSubview(profilesView)
         self.view.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
+        setDefaultName()
+        setDefaultImage()
+        getPostCount()
+        
     }
     
     //MARK: - Lifecycle

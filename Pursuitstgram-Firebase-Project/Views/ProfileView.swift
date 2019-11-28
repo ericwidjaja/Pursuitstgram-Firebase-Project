@@ -37,7 +37,7 @@ class ProfileView: UIView {
     
     var userImage: UIImageView = {
         let image = UIImageView()
-        image.image = #imageLiteral(resourceName: "InstaProfileIMG")
+        image.image = UIImage(imageLiteralResourceName: "InstaProfileIMG")
         image.contentMode = .scaleAspectFill
         return image
     }()
@@ -127,10 +127,10 @@ class ProfileView: UIView {
     }
     private func addButtonConstraints() {
         NSLayoutConstraint.activate([
-            addButton.bottomAnchor.constraint(equalTo: userImage.topAnchor),
-            addButton.trailingAnchor.constraint(equalTo: userImage.trailingAnchor,constant: 30),
-            addButton.heightAnchor.constraint(equalToConstant: 50),
-            addButton.widthAnchor.constraint(equalToConstant: 50)])
+            addButton.topAnchor.constraint(equalTo: userImage.bottomAnchor, constant: -15),
+            addButton.trailingAnchor.constraint(equalTo: userImage.trailingAnchor,constant: 0),
+            addButton.heightAnchor.constraint(equalToConstant: 40),
+            addButton.widthAnchor.constraint(equalToConstant: 40)])
     }
     
     override init(frame: CGRect) {

@@ -1,4 +1,3 @@
-//
 //  FirebaseAuthService.swift
 //  Pursuitstgram-Firebase-Project
 //
@@ -55,6 +54,5 @@ class FirebaseAuthService {
             }
         }
     }
-
     private init() {}
 }

@@ -1,10 +1,9 @@
-//
 //  FirestoreService.swift
 //  Pursuitstgram-Firebase-Project
 //
 //  Created by Eric Widjaja on 11/24/19.
 //  Copyright © 2019 Eric.W. All rights reserved.
-//
+
 
 import Foundation
 import FirebaseFirestore
@@ -57,14 +56,13 @@ class FirestoreService {
         if let photo = photoURL {
             updateFields["photoURL"] = photo.absoluteString
         }
-        //PUT request
+        //Make request
         db.collection(FireStoreCollections.users.rawValue).document(userId).updateData(updateFields) { (error) in
             if let error = error {
                 completion(.failure(error))
             } else {
                 completion(.success(()))
             }
-            
         }
     }
     
@@ -104,6 +102,7 @@ class FirestoreService {
             }
         }
     }
+    
     func getPosts(forUserID: String, completion: @escaping (Result<[Post], Error>) -> ()) {
         db.collection(FireStoreCollections.posts.rawValue).whereField("creatorID", isEqualTo: forUserID).getDocuments { (snapshot, error) in
             if let error = error {

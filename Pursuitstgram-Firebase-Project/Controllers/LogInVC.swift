@@ -9,8 +9,8 @@ import FirebaseAuth
 
 class LogInVC: UIViewController {
     
-    var logInEmail: UITextField!
-    var logInPassword: UITextField!
+    var logInEmail: UITextField?
+    var logInPassword: UITextField?
     var loginView = LogInView()
     
     
@@ -170,8 +170,8 @@ extension LogInVC: UITextFieldDelegate {
         return true
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        logInPassword.resignFirstResponder()
-        logInEmail.resignFirstResponder()
+        logInPassword?.resignFirstResponder()
+        logInEmail?.resignFirstResponder()
         return (true)
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
