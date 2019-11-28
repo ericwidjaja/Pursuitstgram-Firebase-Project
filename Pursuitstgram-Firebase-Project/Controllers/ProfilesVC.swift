@@ -115,10 +115,8 @@ class ProfilesVC: UIViewController {
                 }
             }
         }
-
         alert.addAction(cancelAction)
         alert.addAction(saveAction)
-
         alert.addTextField(configurationHandler: {(textField: UITextField!) in
             textField.placeholder = "Enter New Display Name"
             self.displayNameTextBox = textField

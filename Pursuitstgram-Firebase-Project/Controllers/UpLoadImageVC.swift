@@ -25,6 +25,18 @@ class UpLoadImageVC: UIViewController {
         view.addSubview(uploadImage)
         view.backgroundColor = .lightGray
     }
+
+//MARK: - Private Methods
+    private func presentPhotoPickerController() {
+        DispatchQueue.main.async{
+            let imagePickerViewController = UIImagePickerController()
+            imagePickerViewController.delegate = self
+            imagePickerViewController.sourceType = .photoLibrary
+            imagePickerViewController.allowsEditing = true
+            imagePickerViewController.mediaTypes = ["public.image", "public.movie"]
+            self.present(imagePickerViewController, animated: true, completion: nil)
+        }
+    }
     
     private func showAlert(with title: String, and message: String) {
     let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -39,8 +51,7 @@ class UpLoadImageVC: UIViewController {
             PHPhotoLibrary.requestAuthorization({[weak self] status in
                 switch status {
                 case .authorized:
-                    print("need to write photoPickerController")
-//                    self?.presentPhotoPickerController()
+                    self?.presentPhotoPickerController()
                 case .denied:
                     print("Denied photo library permissions")
                 default:
@@ -48,10 +59,11 @@ class UpLoadImageVC: UIViewController {
                 }
             })
         default:
-            print("need to write func photoPickerController()")
-            //presentPhotoPickerController()
+            print("does the func photoPickerController(), working?")
+            presentPhotoPickerController()
         }
     }
+    
     @objc func uploadButtonPressed() {
         guard let user = FirebaseAuthService.manager.currentUser else {return}
         guard let photoUrl = imageURL else {return}
@@ -73,3 +85,30 @@ class UpLoadImageVC: UIViewController {
         uploadImage.uploadAddButton.addTarget(self, action: #selector(addButtonPressed), for: .touchUpInside)
     }
 }
+
+extension UpLoadImageVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[.editedImage] as? UIImage else {
+            showAlert(with: "Error", and: "Couldn't get image")
+            return
+        }
+        self.image = image
+        
+        guard let imageData = image.jpegData(compressionQuality: 1) else {
+            showAlert(with: "Error", and: "could not compress image")
+            return
+        }
+        
+        FirebaseStorageService.uploadManager.storeImage(image: imageData, completion: { [weak self] (result) in
+            switch result{
+            case .success(let url):
+                self?.imageURL = url
+                
+            case .failure(let error):
+                print(error)
+            }
+        })
+        dismiss(animated: true, completion: nil)
+    }
+}
+
