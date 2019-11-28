@@ -23,8 +23,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //            window?.rootViewController = PursuitstgramTabBC()
 //        } else {
         //trying if DetailImageVC is showing up
-            window?.rootViewController = DetailImageVC ()
-//            window?.rootViewController = LogInVC()
+//            window?.rootViewController = DetailImageVC ()
+            window?.rootViewController = LogInVC()
             window?.makeKeyAndVisible()
 //        }
     }

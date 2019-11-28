@@ -82,7 +82,7 @@ class UpLoadImageVC: UIViewController {
         super.viewDidLoad()
         setUploadImageView()
         uploadImage.uploadButton.addTarget(self, action: #selector(uploadButtonPressed), for: .touchUpInside)
-        uploadImage.uploadAddButton.addTarget(self, action: #selector(addButtonPressed), for: .touchUpInside)
+        uploadImage.uploadAddImageButton.addTarget(self, action: #selector(addButtonPressed), for: .touchUpInside)
     }
 }
 

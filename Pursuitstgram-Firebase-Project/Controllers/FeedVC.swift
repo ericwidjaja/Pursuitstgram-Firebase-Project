@@ -88,12 +88,12 @@ extension FeedVC: UICollectionViewDelegate, UICollectionViewDataSource {
         }
         return cell
     }
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let singlePost = postImages[indexPath.row]
-//        let imageDetailVC = DetailImageVC()
-//        imageDetailVC.post = singlePost
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let singlePost = postImages[indexPath.row]
+        let imageDetailVC = DetailImageVC()
+        imageDetailVC.post = singlePost
 //        present(DetailImageVC, animated: true, completion: nil)
-//    }
+    }
     
 }
 

@@ -28,21 +28,21 @@ class UpLoadImageView: UIView {
         return image
     }()
     
-    var uploadAddButton: UIButton = {
+    var uploadAddImageButton: UIButton = {
         let button = UIButton()
-        button.setImage(#imageLiteral(resourceName: "upLoad"), for: .normal)
+        button.setImage(#imageLiteral(resourceName: "add"), for: .normal)
         button.setTitleColor(.systemTeal, for: .normal)
         return button
     }()
     
     var uploadButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Upload", for: .normal)
+        button.setImage(#imageLiteral(resourceName: "upLoad"), for: .normal)
         button.setTitleColor(.systemTeal, for: .normal)
         return button
     }()
     
-    lazy var feedViewArray = [self.uploadLabel, self.uploadImageView, self.uploadAddButton, self.uploadButton]
+    lazy var feedViewArray = [self.uploadLabel, self.uploadImageView, self.uploadAddImageButton, self.uploadButton]
     
     
 //MARK:Add ViewsToSubviews
@@ -76,10 +76,10 @@ class UpLoadImageView: UIView {
     }
     private func uploadAddButtonConstraints() {
         NSLayoutConstraint.activate([
-            uploadAddButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -250),
-            uploadAddButton.heightAnchor.constraint(equalToConstant: 60),
-            uploadAddButton.widthAnchor.constraint(equalToConstant: 60),
-            uploadAddButton.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor)])
+            uploadAddImageButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -250),
+            uploadAddImageButton.heightAnchor.constraint(equalToConstant: 60),
+            uploadAddImageButton.widthAnchor.constraint(equalToConstant: 60),
+            uploadAddImageButton.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor)])
     }
     
     private func uploadButtonConstraints() {
