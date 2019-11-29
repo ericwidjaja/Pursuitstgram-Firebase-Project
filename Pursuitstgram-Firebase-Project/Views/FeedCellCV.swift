@@ -11,18 +11,19 @@ import UIKit
 class FeedCellCV: UICollectionViewCell {
     
     var feedImage: UIImageView = {
-        let image = UIImageView(frame: CGRect(x: 0, y: 0, width: 150, height: 100))
-        image.backgroundColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
+        let image = UIImageView(frame: CGRect(x: 0, y: 0, width: 200, height: 160))
+        image.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         image.contentMode = .scaleAspectFit
         return image
     }()
     
     var nameLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .black
-        label.layer.borderColor = UIColor.red.cgColor
-        label.layer.borderWidth = 2
+        label.textColor = .white
+        label.layer.borderColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
+        label.layer.borderWidth = 4
         label.textAlignment = .center
+        label.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         return label
     }()
     
@@ -44,10 +45,8 @@ class FeedCellCV: UICollectionViewCell {
             nameLabel.topAnchor.constraint(equalTo: feedImage.bottomAnchor),
             nameLabel.leadingAnchor.constraint(equalTo: feedImage.leadingAnchor),
             nameLabel.trailingAnchor.constraint(equalTo: feedImage.trailingAnchor),
-            nameLabel.heightAnchor.constraint(equalToConstant: 50)])
+            nameLabel.heightAnchor.constraint(equalToConstant: 40)])
     }
-    
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setImageConstraints()

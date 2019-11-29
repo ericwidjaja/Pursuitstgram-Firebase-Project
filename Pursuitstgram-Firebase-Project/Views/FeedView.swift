@@ -7,6 +7,8 @@
 import UIKit
 
 class FeedView: UIView {
+    
+    var feedCell = FeedCellCV()
 
 //MARK: - Objects
     var feedLabel: UILabel = {
@@ -20,7 +22,7 @@ class FeedView: UIView {
     
     var feedCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.estimatedItemSize = CGSize(width: 160, height: 160)
+        layout.itemSize = CGSize(width: 200, height: 200)
         let collection = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         collection.backgroundColor = .white
         collection.register(FeedCellCV.self, forCellWithReuseIdentifier: "feedCell")
@@ -28,7 +30,6 @@ class FeedView: UIView {
     }()
     
     lazy var feedViewArray = [self.feedLabel, self.feedCollectionView]
-    
     
 //MARK:Add ViewsToSubviews
     func addViewsToSubView() {
@@ -48,12 +49,12 @@ class FeedView: UIView {
         NSLayoutConstraint.activate([
             feedLabel.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
             feedLabel.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,constant: 40),
-            feedLabel.heightAnchor.constraint(equalToConstant: 50),
+            feedLabel.heightAnchor.constraint(equalToConstant: 60),
             feedLabel.widthAnchor.constraint(equalToConstant: 150)])
     }
     private func collectionViewConstraints() {
         NSLayoutConstraint.activate([
-            feedCollectionView.topAnchor.constraint(equalTo: feedLabel.bottomAnchor, constant: 30),
+            feedCollectionView.topAnchor.constraint(equalTo: feedLabel.bottomAnchor, constant: 40),
             feedCollectionView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
             feedCollectionView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
             feedCollectionView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)])

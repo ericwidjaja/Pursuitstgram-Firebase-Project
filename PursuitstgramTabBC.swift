@@ -15,14 +15,12 @@ class PursuitstgramTabBC: UITabBarController {
     lazy var profileVC: UINavigationController = {
         
         let userProfileVC = ProfilesVC()
-        //userProfileVC.user = AppUser(from: FirebaseAuthService.manager.currentUser!)
-        //userProfileVC.isCurrentUser = true
         return UINavigationController(rootViewController: userProfileVC)
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        feedVC.tabBarItem = UITabBarItem(title: "Feed", image: UIImage(systemName: "line.horizontal.3"), tag: 0)
+        feedVC.tabBarItem = UITabBarItem(title: "Feed", image: #imageLiteral(resourceName: "FeedGallery"), tag: 0)
         uploadVC.tabBarItem = UITabBarItem(title: "Upload", image: UIImage(systemName: "square.and.arrow.up.on.square"), tag: 1)
         profileVC.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person.2.fill"), tag: 2)
         self.viewControllers = [feedVC, uploadVC,profileVC]

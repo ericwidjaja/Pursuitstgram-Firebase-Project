@@ -12,11 +12,8 @@ import UIKit
 class FeedVC: UIViewController {
 
 //MARK: - Properties
-    
     var feedView = FeedView()
-    
     var feedCell = FeedCellCV()
-    
     var postImages = [Post]() {
         didSet {
             feedView.feedCollectionView.reloadData()
@@ -36,10 +33,10 @@ class FeedVC: UIViewController {
             }
         }
     }
-
-    
     private func setFeedView() {
         view.addSubview(feedView)
+        feedView.feedCollectionView.delegate = self
+        feedView.feedCollectionView.dataSource = self
         view.backgroundColor = #colorLiteral(red: 0.09019608051, green: 0, blue: 0.3019607961, alpha: 1)
     }
 
@@ -94,7 +91,6 @@ extension FeedVC: UICollectionViewDelegate, UICollectionViewDataSource {
         imageDetailVC.post = singlePost
 //        present(DetailImageVC, animated: true, completion: nil)
     }
-    
 }
 
 
