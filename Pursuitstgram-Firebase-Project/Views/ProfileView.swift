@@ -11,27 +11,21 @@ class ProfileView: UIView {
 //MARK: - Objects
     var profileLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.init(name: "Noteworthy-Bold", size: 40)
         label.text = "User Profile"
         label.textAlignment = .center
-        label.textColor = .white
         return label
     }()
     var nameLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.init(name: "Noteworthy-Bold", size: 40)
         label.text = "Profile Name"
         label.textAlignment = .center
-        label.textColor = .white
         return label
     }()
     
     var emailLabel: UILabel = {
         let label = UILabel()
         label.text = "youremail@email.com"
-        label.font = UIFont.init(name: "Noteworthy", size: 22)
         label.textAlignment = .center
-        label.textColor = .white
         return label
     }()
     
@@ -45,9 +39,7 @@ class ProfileView: UIView {
     var imageSubmissionLabel: UILabel = {
         let label = UILabel()
         label.text = "You have NOT submitted any images"
-        label.font = UIFont.init(name: "Noteworthy", size: 22)
         label.textAlignment = .center
-        label.textColor = .white
         label.numberOfLines = 0
         return label
     }()
@@ -65,9 +57,16 @@ class ProfileView: UIView {
         return button
     }()
     
+    private func setLabels(){
+    [profileLabel, nameLabel, emailLabel, imageSubmissionLabel].forEach{$0?.textColor = .white}
+    [emailLabel, imageSubmissionLabel].forEach{$0?.font = UIFont.init(name: "Noteworthy", size: 24)}
+    [profileLabel, nameLabel].forEach{$0?.font = UIFont.init(name: "Noteworthy", size: 42)}
+    }
+    
 //MARK: - Constraints
     func profileConstraints() {
         addViewsToSubView()
+        setLabels()
         profileLabelConstraints()
         imageConstraints()
         nameConstraints()
