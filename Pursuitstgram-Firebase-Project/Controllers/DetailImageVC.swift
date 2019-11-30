@@ -1,56 +1,34 @@
-//
 //  DetailImageVC.swift
 //  Pursuitstgram-Firebase-Project
-//
 //  Created by Eric Widjaja on 11/25/19.
 //  Copyright © 2019 Eric.W. All rights reserved.
-//
 
 import UIKit
 
 class DetailImageVC: UIViewController {
+    //MARK: - Properties
     
-//MARK: - Properties
     var post: Post?
-    
-//MARK: - UI Objects
-    @IBOutlet weak var titleLabel: UILabel!
-    
-    
-    @IBOutlet weak var detailImage: UIImageView!
-    
-    
-    
-    @IBOutlet weak var submissionLabel: UILabel!
-    
-    @IBOutlet weak var createdLabel: UILabel!
-    
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .darkGray
-        getSelectedImage()
-        getSetUserName()
-        getDate()
+    var detailPost = DetailImageView()
 
+    //MARK: - Private Methods
+    private func setDetailImageView() {
+        view.addSubview(detailPost)
+        view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
     }
     
-    
-//MARK: - Private Functions
-    private func getSelectedImage() {
+    private func getSetImage() {
         if let photoUrl = post?.photoUrl {
             FirebaseStorageService.uploadManager.getImage(url: photoUrl) { (result) in
                 switch result {
                 case .failure(let error):
                     print(error)
                 case .success(let firebaseImage):
-                    self.detailImage.image = firebaseImage
+                    self.detailPost.detailSelectedImage.image = firebaseImage
                 }
             }
         }
     }
-    
     private func getSetUserName() {
         if let post = post {
             FirestoreService.manager.getUserNameFromPost(creatorID: post.creatorID) { (result) in
@@ -58,17 +36,26 @@ class DetailImageVC: UIViewController {
                 case .failure(let error):
                     print(error)
                 case .success(let displayName):
-                    self.submissionLabel.text = "Submitted by: \(displayName)"
+                    self.detailPost.detailSubmissionLabel.text = "Submitted by: \(displayName)"
                 }
             }
         }
     }
-    
     private func getDate() {
         guard let post = post, let date = post.dateCreated else {return}
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMM d, h:mm a"
         let strDate = dateFormatter.string(from: date)
-        createdLabel.text = "Created at: \(strDate)"
+        self.detailPost.detailCreatedLabel.text = "Created at: \(strDate)"
+    }
+
+    //MARK: - LifeCycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationController?.navigationBar.barTintColor = UIColor.black
+        setDetailImageView()
+        getSetImage()
+        getSetUserName()
+        getDate()
     }
 }

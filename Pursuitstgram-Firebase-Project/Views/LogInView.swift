@@ -1,12 +1,10 @@
-// LogIn.swift
+//  LogIn.swift
 //  Pursuitstgram-Firebase-Project
 //  Created by Eric Widjaja on 11/23/19.
 //  Copyright © 2019 Eric.W. All rights reserved.
 
-
 import UIKit
 import FirebaseAuth
-
 
 class LogInView: UIView {
 
@@ -39,6 +37,7 @@ class LogInView: UIView {
         textField.autocorrectionType = .no
         return textField
     }()
+    
     var passwordTxtField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "enter your password"

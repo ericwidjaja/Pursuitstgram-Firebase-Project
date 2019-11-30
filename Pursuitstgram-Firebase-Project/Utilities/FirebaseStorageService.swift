@@ -30,7 +30,6 @@ class FirebaseStorageService {
         }
     }
     
-    
     func storeImage(image: Data,  completion: @escaping (Result<String,Error>) -> ()) {
         let metadata = StorageMetadata()
         metadata.contentType = "image/jpeg"

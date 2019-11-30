@@ -16,6 +16,17 @@ class FeedVC: UIViewController {
             feedView.feedCollectionView.reloadData()
         }
     }
+//MARK: - Objc Functions
+    
+    @objc func navigateToStoryboardDetailImageVC() {
+        //look for the specific storyboard that has the VC in it
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        //in that storyboard, look for the VC that I'm going to create that instance of
+        let divc = storyboard.instantiateViewController(identifier: "DetailImageVC") as! DetailImageVC
+        //push that VC onto the navigation controller
+        self.navigationController?.pushViewController(divc, animated: true)
+    }
+    
 
 //MARK: - Private Functions
     private func getPosts() {
@@ -40,6 +51,7 @@ class FeedVC: UIViewController {
 //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
         setFeedView()
         getPosts()
    }
@@ -84,11 +96,10 @@ extension FeedVC: UICollectionViewDelegate, UICollectionViewDataSource {
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let singlePost = postImages[indexPath.row]
+        let selectedPost = postImages[indexPath.row]
         let imageDetailVC = DetailImageVC()
-        imageDetailVC.post = singlePost
-//        present(DetailImageVC, animated: true, completion: nil)
+        imageDetailVC.post = selectedPost
+        self.navigationController?.pushViewController(imageDetailVC, animated: true)
+        print("to detVC")
     }
 }
-
-

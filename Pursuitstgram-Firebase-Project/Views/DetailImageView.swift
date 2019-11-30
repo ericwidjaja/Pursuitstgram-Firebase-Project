@@ -14,10 +14,9 @@ class DetailImageView: UIView {
 
     lazy var detailTitleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.init(name: "Noteworthy-Bold", size: 35)
-        label.text = "POST DETAIL"
+        label.font = UIFont.init(name: "Noteworthy-Bold", size: 34)
+        label.text = "POST  IMAGE  DETAIL"
         label.textAlignment = .center
-        label.textColor = .white
         return label
     }()
 
@@ -31,22 +30,23 @@ class DetailImageView: UIView {
     lazy var detailSubmissionLabel: UILabel = {
         let label = UILabel()
         label.text = "Submitted by:"
-        label.font = UIFont.init(name: "Noteworthy", size: 24)
-        label.textColor = .white
         return label
     }()
     
     lazy var detailCreatedLabel: UILabel = {
         let label = UILabel()
         label.text = "Created at: MM/DD HH:MM"
-        label.font = UIFont.init(name: "Noteworthy", size: 24)
-        label.textColor = .white
         return label
     }()
+    private func setLabels(){
+        [detailTitleLabel, detailSubmissionLabel, detailCreatedLabel].forEach{$0?.textColor = .white}
+        [detailSubmissionLabel, detailCreatedLabel].forEach{$0?.font = UIFont.init(name: "Noteworthy", size: 24)}
+    }
     
 //MARK: - Constraints
     func detailPostConstraints() {
         addViewsToSubView()
+        setLabels()
         titleLabelConstraints()
         selectedImageConstraints()
         createdLabelConstraints()

@@ -1,5 +1,5 @@
 //
-//  AppUser.swift
+//  StgramUser.swift
 //  Pursuitstgram-Firebase-Project
 //
 //  Created by Eric Widjaja on 11/24/19.

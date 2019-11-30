@@ -1,10 +1,7 @@
-//
 //  FeedCellCV.swift
 //  Pursuitstgram-Firebase-Project
-//
 //  Created by Eric Widjaja on 11/25/19.
 //  Copyright © 2019 Eric.W. All rights reserved.
-//
 
 import UIKit
 
@@ -14,7 +11,6 @@ class FeedCellCV: UICollectionViewCell {
         let image = UIImageView(frame: CGRect(x: 0, y: 0, width: 200, height: 160))
         image.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         image.contentMode = .scaleAspectFit
-        
         return image
     }()
     
@@ -27,7 +23,6 @@ class FeedCellCV: UICollectionViewCell {
         label.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         return label
     }()
-    
     
     func setImageConstraints() {
         contentView.addSubview(feedImage)

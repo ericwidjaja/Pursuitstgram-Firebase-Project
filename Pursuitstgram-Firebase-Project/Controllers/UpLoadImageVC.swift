@@ -1,10 +1,7 @@
-//
 //  UpLoadImageVC.swift
 //  Pursuitstgram-Firebase-Project
-//
 //  Created by Eric Widjaja on 11/25/19.
 //  Copyright © 2019 Eric.W. All rights reserved.
-//
 
 import UIKit
 import Photos
@@ -110,4 +107,3 @@ extension UpLoadImageVC: UIImagePickerControllerDelegate, UINavigationController
         dismiss(animated: true, completion: nil)
     }
 }
-
