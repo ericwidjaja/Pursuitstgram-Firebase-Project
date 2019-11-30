@@ -14,6 +14,7 @@ class FeedCellCV: UICollectionViewCell {
         let image = UIImageView(frame: CGRect(x: 0, y: 0, width: 200, height: 160))
         image.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         image.contentMode = .scaleAspectFit
+        
         return image
     }()
     

@@ -31,7 +31,7 @@ class FirestoreService {
     
     
 //MARK: AppUsers
-    func createAppUser(user: AppUser, completion: @escaping (Result<(), Error>) -> ()) {
+    func createAppUser(user: StgramUser, completion: @escaping (Result<(), Error>) -> ()) {
         var fields = user.fieldsDict
         fields["dateCreated"] = Date()
         db.collection(FireStoreCollections.users.rawValue).document(user.uid).setData(fields) { (error) in
@@ -66,14 +66,14 @@ class FirestoreService {
         }
     }
     
-    func getAllUsers(completion: @escaping (Result<[AppUser], Error>) -> ()) {
+    func getAllUsers(completion: @escaping (Result<[StgramUser], Error>) -> ()) {
         db.collection(FireStoreCollections.users.rawValue).getDocuments { (snapshot, error) in
             if let error = error {
                 completion(.failure(error))
             } else {
-                let users = snapshot?.documents.compactMap({ (snapshot) -> AppUser? in
+                let users = snapshot?.documents.compactMap({ (snapshot) -> StgramUser? in
                     let userID = snapshot.documentID
-                    let user = AppUser(from: snapshot.data(), id: userID)
+                    let user = StgramUser(from: snapshot.data(), id: userID)
                     return user
                 })
                 completion(.success(users ?? []))
@@ -126,7 +126,7 @@ class FirestoreService {
             } else if let snapshot = snapshot,
                 let data = snapshot.data() {
                 let userID = snapshot.documentID
-                let user = AppUser(from: data, id: userID)
+                let user = StgramUser(from: data, id: userID)
                 if let appUser = user {
                     completion(.success(appUser.userName ?? ""))
                 }

@@ -256,6 +256,7 @@
 				DF5B7433238C76C3002D0792 /* FeedView.swift */,
 				DF5B743B238C7D76002D0792 /* FeedCellCV.swift */,
 				DF5B7443238C820B002D0792 /* UpLoadImageView.swift */,
+				DF327ECB23920C9F005A95BC /* DetailImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -263,7 +264,7 @@
 		DF5B7405238B649A002D0792 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				DF5B740F238B7000002D0792 /* AppUser.swift */,
+				DF5B740F238B7000002D0792 /* StgramUser.swift */,
 				DF5B744B238C9164002D0792 /* Post.swift */,
 			);
 			path = Models;
@@ -543,9 +544,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF5B7434238C76C3002D0792 /* FeedView.swift in Sources */,
-				DF5B7410238B7000002D0792 /* AppUser.swift in Sources */,
+				DF5B7410238B7000002D0792 /* StgramUser.swift in Sources */,
 				DF5B740C238B6B85002D0792 /* FirestoreService.swift in Sources */,
 				DF5B741C238C354E002D0792 /* ProfileView.swift in Sources */,
+				DF327ECC23920C9F005A95BC /* DetailImageView.swift in Sources */,
 				DF5B7444238C820B002D0792 /* UpLoadImageView.swift in Sources */,
 				DF28B3A62389A8CC00AA8CE0 /* LogInView.swift in Sources */,
 				DF5B743C238C7D76002D0792 /* FeedCellCV.swift in Sources */,
@@ -572,12 +574,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF5B7435238C76C3002D0792 /* FeedView.swift in Sources */,
+				DF327ECD23920C9F005A95BC /* DetailImageView.swift in Sources */,
 				DF5B7431238C7634002D0792 /* FeedVC.swift in Sources */,
 				DF5B7429238C4712002D0792 /* ProfilesVC.swift in Sources */,
 				DF5B7449238C8A08002D0792 /* DetailImageVC.swift in Sources */,
 				DF5B7492238F7009002D0792 /* AppError.swift in Sources */,
 				DF5B748D238F6F87002D0792 /* NetworkManager.swift in Sources */,
-				DF5B7411238B7000002D0792 /* AppUser.swift in Sources */,
+				DF5B7411238B7000002D0792 /* StgramUser.swift in Sources */,
 				DF5B7445238C820B002D0792 /* UpLoadImageView.swift in Sources */,
 				DF5B743D238C7D76002D0792 /* FeedCellCV.swift in Sources */,
 				DF28B33223837B0900AA8CE0 /* Pursuitstgram_Firebase_ProjectTests.swift in Sources */,
@@ -597,12 +600,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF5B7436238C76C3002D0792 /* FeedView.swift in Sources */,
+				DF327ECE23920C9F005A95BC /* DetailImageView.swift in Sources */,
 				DF5B7432238C7634002D0792 /* FeedVC.swift in Sources */,
 				DF5B742A238C4712002D0792 /* ProfilesVC.swift in Sources */,
 				DF5B744A238C8A08002D0792 /* DetailImageVC.swift in Sources */,
 				DF5B7493238F7009002D0792 /* AppError.swift in Sources */,
 				DF5B748E238F6F87002D0792 /* NetworkManager.swift in Sources */,
-				DF5B7412238B7000002D0792 /* AppUser.swift in Sources */,
+				DF5B7412238B7000002D0792 /* StgramUser.swift in Sources */,
 				DF5B7446238C820B002D0792 /* UpLoadImageView.swift in Sources */,
 				DF5B743E238C7D76002D0792 /* FeedCellCV.swift in Sources */,
 				DF28B33D23837B0900AA8CE0 /* Pursuitstgram_Firebase_ProjectUITests.swift in Sources */,

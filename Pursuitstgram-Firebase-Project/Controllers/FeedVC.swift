@@ -1,11 +1,8 @@
-//
 //  FeedVC.swift
 //  Pursuitstgram-Firebase-Project
 //
 //  Created by Eric Widjaja on 11/25/19.
 //  Copyright © 2019 Eric.W. All rights reserved.
-//
-
 
 import UIKit
 
@@ -45,7 +42,8 @@ class FeedVC: UIViewController {
         super.viewDidLoad()
         setFeedView()
         getPosts()
-    }
+   }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getPosts()

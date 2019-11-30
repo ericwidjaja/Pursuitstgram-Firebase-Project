@@ -8,7 +8,7 @@ import Foundation
 import FirebaseFirestore
 import FirebaseAuth
 
-struct AppUser {
+struct StgramUser {
     let email: String?
     let uid: String
     let userName: String?

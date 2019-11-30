@@ -53,13 +53,13 @@ class UpLoadImageVC: UIViewController {
                 case .authorized:
                     self?.presentPhotoPickerController()
                 case .denied:
-                    print("Denied photo library permissions")
+                    print("Photo library access is denied")
                 default:
                     print("No usable status")
                 }
             })
         default:
-            print("does the func photoPickerController(), working?")
+            print("YES! the photoPickerController() IS working!")
             presentPhotoPickerController()
         }
     }
@@ -70,9 +70,9 @@ class UpLoadImageVC: UIViewController {
         FirestoreService.manager.createPost(post: Post(photoUrl: photoUrl, creatorID: user.uid)) { (result) in
             switch result {
             case .failure(let error):
-                self.showAlert(with: "Unable to make post", and: "Error: \(error)")
+                self.showAlert(with: "Unable to post", and: "Error: \(error)")
             case .success:
-                self.showAlert(with: "Successful", and: "Post created")
+                self.showAlert(with: "Successful", and: "Posted the Image")
             }
         }
     }
@@ -103,7 +103,6 @@ extension UpLoadImageVC: UIImagePickerControllerDelegate, UINavigationController
             switch result{
             case .success(let url):
                 self?.imageURL = url
-                
             case .failure(let error):
                 print(error)
             }

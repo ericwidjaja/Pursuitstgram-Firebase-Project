@@ -44,7 +44,7 @@ class LogInVC: UIViewController {
                 case .failure(let error):
                     self.showAlert(with: "Couldn't create user", and: "Error: \(error)")
                 case .success(let newUser):
-                    FirestoreService.manager.createAppUser(user: AppUser.init(from: newUser)) { (result) in
+                    FirestoreService.manager.createAppUser(user: StgramUser.init(from: newUser)) { (result) in
                         self.handleLoginResponse(with: result)
                     }
                 }
@@ -79,7 +79,7 @@ class LogInVC: UIViewController {
         DispatchQueue.main.async { [weak self] in
             switch result {
             case .success(let user):
-                FirestoreService.manager.createAppUser(user: AppUser(from: user)) { [weak self] newResult in
+                FirestoreService.manager.createAppUser(user: StgramUser(from: user)) { [weak self] newResult in
                     self?.createUserInFirestore(result: newResult)
                 }
             case .failure(let error):
