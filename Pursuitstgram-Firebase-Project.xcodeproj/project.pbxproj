@@ -22,10 +22,12 @@
 		DF28B3A62389A8CC00AA8CE0 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF28B3A52389A8CC00AA8CE0 /* LogInView.swift */; };
 		DF28B3A72389A8CC00AA8CE0 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF28B3A52389A8CC00AA8CE0 /* LogInView.swift */; };
 		DF28B3A82389A8CC00AA8CE0 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF28B3A52389A8CC00AA8CE0 /* LogInView.swift */; };
-		DF327ECA2391FD4F005A95BC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF327EC92391FD4F005A95BC /* GoogleService-Info.plist */; };
 		DF327ECC23920C9F005A95BC /* DetailImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF327ECB23920C9F005A95BC /* DetailImageView.swift */; };
 		DF327ECD23920C9F005A95BC /* DetailImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF327ECB23920C9F005A95BC /* DetailImageView.swift */; };
 		DF327ECE23920C9F005A95BC /* DetailImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF327ECB23920C9F005A95BC /* DetailImageView.swift */; };
+		DF327ED423922D95005A95BC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF327ED323922D95005A95BC /* GoogleService-Info.plist */; };
+		DF327ED523922D95005A95BC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF327ED323922D95005A95BC /* GoogleService-Info.plist */; };
+		DF327ED623922D95005A95BC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF327ED323922D95005A95BC /* GoogleService-Info.plist */; };
 		DF5B7407238B64E7002D0792 /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B7406238B64E7002D0792 /* FirebaseAuthService.swift */; };
 		DF5B740C238B6B85002D0792 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B740B238B6B85002D0792 /* FirestoreService.swift */; };
 		DF5B740D238B6B85002D0792 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5B740B238B6B85002D0792 /* FirestoreService.swift */; };
@@ -119,8 +121,8 @@
 		DF28B33C23837B0900AA8CE0 /* Pursuitstgram_Firebase_ProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pursuitstgram_Firebase_ProjectUITests.swift; sourceTree = "<group>"; };
 		DF28B33E23837B0900AA8CE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF28B3A52389A8CC00AA8CE0 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
-		DF327EC92391FD4F005A95BC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DF327ECB23920C9F005A95BC /* DetailImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImageView.swift; sourceTree = "<group>"; };
+		DF327ED323922D95005A95BC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DF5B7406238B64E7002D0792 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
 		DF5B740B238B6B85002D0792 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		DF5B740F238B7000002D0792 /* StgramUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StgramUser.swift; sourceTree = "<group>"; };
@@ -212,8 +214,8 @@
 				DF5B740A238B656F002D0792 /* Utilities */,
 				DF28B32323837B0900AA8CE0 /* Assets.xcassets */,
 				DF28B32523837B0900AA8CE0 /* LaunchScreen.storyboard */,
-				DF327EC92391FD4F005A95BC /* GoogleService-Info.plist */,
 				DF28B32823837B0900AA8CE0 /* Info.plist */,
+				DF327ED323922D95005A95BC /* GoogleService-Info.plist */,
 				DF28B32023837B0400AA8CE0 /* Pursuitstgram_Firebase_Project.xcdatamodeld */,
 				DF5B748F238F6FAA002D0792 /* NetworkManager */,
 			);
@@ -417,7 +419,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF28B32723837B0900AA8CE0 /* LaunchScreen.storyboard in Resources */,
-				DF327ECA2391FD4F005A95BC /* GoogleService-Info.plist in Resources */,
+				DF327ED423922D95005A95BC /* GoogleService-Info.plist in Resources */,
 				DF28B32423837B0900AA8CE0 /* Assets.xcassets in Resources */,
 				DF28B31F23837B0400AA8CE0 /* Main.storyboard in Resources */,
 			);
@@ -427,6 +429,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF327ED523922D95005A95BC /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +437,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF327ED623922D95005A95BC /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
