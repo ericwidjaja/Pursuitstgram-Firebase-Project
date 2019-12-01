@@ -30,9 +30,7 @@ class LogInVC: UIViewController {
     
     @objc func createAcctForm(){
         let alert = UIAlertController(title: "Sign In", message: "Create an account", preferredStyle: .alert)
-        
         let cancelAction = UIAlertAction(title: "Cancel" , style: .cancel)
-        
         let saveAction = UIAlertAction(title: "Submit", style: .default) { (action) -> Void in
             
             guard let email = self.logInEmail?.text, !email.isEmpty, let password = self.logInPassword?.text, !password.isEmpty else {

@@ -11,21 +11,18 @@ class ProfilesVC: UIViewController {
 //MARK: - Properties
         
     var profilesView = ProfileView()
-    
     var image = UIImage() {
         didSet {
             profilesView.userImage.image = image
         }
     }
-
+    var displayNameTextBox: UITextField?
     var imageURL: String? = nil
     var postCount = 0 {
         didSet {
             profilesView.imageSubmissionLabel.text = "You have submitted \(postCount) images"
         }
     }
-        var displayNameTextBox: UITextField?
-
 
 //MARK: - Setup Method
     private func setupEmailLabel() {
@@ -144,12 +141,10 @@ class ProfilesVC: UIViewController {
     private func setProfilesView() {
         view.addSubview(profilesView)
         self.view.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
-        
         setDefaultName()
         setDefaultImage()
         setupEmailLabel()
         getPostCount()
-        
     }
     
     //MARK: - Lifecycle
