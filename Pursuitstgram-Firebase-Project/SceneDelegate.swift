@@ -24,7 +24,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if FirebaseAuthService.manager.currentUser != nil {
             window?.rootViewController = PursuitstgramTabBC()
         } else {
-         window?.rootViewController = DetailImageVC ()
             window?.rootViewController = LogInVC()
             window?.makeKeyAndVisible()
         }

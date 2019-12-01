@@ -4,6 +4,7 @@
 // Copyright © 2019 Eric.W. All rights reserved.
 
 import UIKit
+import FirebaseAuth
 
 class ProfilesVC: UIViewController {
 
@@ -92,17 +93,14 @@ class ProfilesVC: UIViewController {
     @objc func displayForm(){
         //create alert
         let alert = UIAlertController(title: "Edit Profile Name?", message: nil, preferredStyle: .alert)
-
         //create cancel button
         let cancelAction = UIAlertAction(title: "Cancel" , style: .cancel)
-
         //create save button
         let saveAction = UIAlertAction(title: "Save", style: .default) { (action) -> Void in
             guard let newName = self.displayNameTextBox?.text, !newName.isEmpty else {
                 self.showAlert(with: "Required", and: "Fill both fields")
                 return
             }
-
             FirebaseAuthService.manager.updateUserFields(userName: newName) { (result) in
                 switch result {
                 case .success:
@@ -133,10 +131,20 @@ class ProfilesVC: UIViewController {
             self.present(imagePickerViewController, animated: true, completion: nil)
         }
     }
+
+    @objc func signOutFromPursuitstgram() {
+        FirebaseAuthService.manager.signOutUser()
+        showAlert(title: "Signing Out?", message: "Are you sure you want to sign out") { (action) in
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let sceneDelegate = windowScene.delegate as? SceneDelegate, let window = sceneDelegate.window else {return}
+        UIView.transition(with: window, duration: 0.75, options: .transitionCrossDissolve, animations: {
+            window.rootViewController = LogInVC()
+        }, completion: nil)}
+    }
     
     private func setProfilesView() {
         view.addSubview(profilesView)
         self.view.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
+        
         setDefaultName()
         setDefaultImage()
         setupEmailLabel()
@@ -150,6 +158,7 @@ class ProfilesVC: UIViewController {
         setProfilesView()
         profilesView.editButton.addTarget(self, action: #selector(displayForm), for: .touchUpInside)
         profilesView.addButton.addTarget(self, action: #selector(presentPhotoPickerController), for: .touchUpInside)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "sign out", style: .done, target: self, action: #selector(signOutFromPursuitstgram))
     }
 
    override func viewWillAppear(_ animated: Bool) {
